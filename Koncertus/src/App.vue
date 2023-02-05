@@ -4,29 +4,25 @@ import { RouterLink, RouterView } from "vue-router";
 
 <template>
   <nav>
-    <p>
-      <RouterLink to="/">HOME</RouterLink>
-    </p>
-    <p>
-      <RouterLink to="/concerts">CONCERTS</RouterLink>
-    </p>
-    <p>
-      <RouterLink to="/reservations">RESERVATIONS</RouterLink>
-    </p>
-    <p>
-      <RouterLink to="/">
-        <img src="@/assets/img/logo.png" alt="" width="55" height="57" />
-      </RouterLink>
-    </p>
-    <p>
-      <RouterLink to="/profile">MY PROFILE</RouterLink>
-    </p>
-    <p>
-      <RouterLink to="/about">ABOUT</RouterLink>
-    </p>
-    <p>
-      <RouterLink to="/login">LOG IN</RouterLink>
-    </p>
+    <ul>
+      <li>
+        <RouterLink to="/concerts">CONCERTS</RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/profile">MY PROFILE</RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/">
+          <img src="@/assets/img/Logo.svg" alt="" width="45" height="47" />
+        </RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/about">ABOUT</RouterLink>
+      </li>
+      <li>
+        <RouterLink to="/login">LOG IN</RouterLink>
+      </li>
+    </ul>
   </nav>
 
   <RouterView />
