@@ -13,37 +13,37 @@ const router = createRouter({
     {
       path: "/",
       name: "home",
-      component: HomePage
+      component: HomePage,
     },
     {
       path: "/about",
       name: "about",
-      component: AboutPage
+      component: AboutPage,
     },
     {
       path: "/concerts",
       name: "concerts",
-      component: ConcertsPage
+      component: ConcertsPage,
     },
     {
       path: "/login",
       name: "login",
-      component: LoginPage
+      component: LoginPage,
     },
     {
       path: "/register",
       name: "register",
-      component: RegisterPage
+      component: RegisterPage,
     },
     {
       path: "/profile",
       name: "profile",
-      component: ProfilePage
+      component: ProfilePage,
     },
     {
       path: "/reservations",
       name: "reservations",
-      component: ReservationsPage
+      component: ReservationsPage,
     },
   ],
 });

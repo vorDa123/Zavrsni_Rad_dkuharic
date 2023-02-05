@@ -1,6 +1,21 @@
 <template>
-  <div id="coverImage"></div>
+  <div id="coverImage">
+    <div>
+      <p class="commentHeroText">Best website for concerts!! I love it!!</p>
+    </div>
+  </div>
   <div class="wrapper">
-    <h1>Home</h1>
+    <UpcomingConcerts />
   </div>
 </template>
+
+<script>
+import UpcomingConcerts from "@/components/UpcomingConcerts.vue";
+
+export default {
+  components: {
+    UpcomingConcerts,
+  },
+}
+</script>
+
