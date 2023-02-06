@@ -4,40 +4,43 @@
 
 body {
     margin: 0 !important;
-    background-image: url("@/assets/img/slikabg.png");
-    background-size: cover;
-    background-repeat: repeat;
 }
 
-p{
+p {
     margin: 0;
 }
 
 nav {
     width: 100%;
-    background-color: #0A1733;
+    background-color: #0A1733;    
+    display: flex;
+    justify-content: center;
+    align-items: middle;
     position: fixed;
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+nav a.middleAlign{
+    padding: 18px 0 0 0;
 }
 
-nav ul li {
-    display: inline-block;
-    text-align: center;
-    vertical-align: middle;
+nav a{
     width: 20%;
-}
-
-nav ul li a {
-    display: block;
-    padding: 5px;
+    text-align: center;    
     color: #F7F4F2;
     font-weight: bold;
+    vertical-align: middle;
+}
+
+nav a img{
+    padding: 5px 0 2.5px 0;
+}
+
+nav a.notLogo:hover {
+    background-color: #182135;
+}
+
+nav a.notLogo:visited {
+    border-bottom: 10px solid #F7F4F2;
 }
 
 a {
@@ -76,6 +79,7 @@ a {
     border-radius: 20px 20px 0 0;
     width: 300px;
     height: 450px;
+    cursor: pointer;
 }
 
 .concertCardImage {
@@ -94,21 +98,69 @@ a {
     line-height: 55px;
 }
 
-.concertCardText p{
+.concertCardText p {
     padding: 0 10px 0 10px;
 }
 
-.concertCardTextTitle{
+.concertCardTextTitle {
     font-size: 16pt;
     font-weight: bold;
 }
 
-.paddingRightCardIcon{
+.paddingRightCardIcon {
     padding-right: 10px;
 }
 
-.sameLine{
+.sameLine {
     display: flex;
     width: 100%;
     justify-content: space-between;
+}
+
+.topFavoriteArtistsSection{
+    background-color: #112455;
+    opacity: 0.85;
+    color: #F7F4F2;
+    margin: 35px 0 0 0;
+    padding: 15px 0 15px 0;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.bold{
+    font-weight: 500;
+}
+
+.artistsCardsContainer{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+}
+
+.artistCard{
+    width: 205px;
+    height: 200px;
+    border-radius: 10px;
+    background-image: url("@/assets/img/disturbed.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.gradientBackground{
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    z-index: 2;
+    background: linear-gradient(0deg, rgba(1,0,13,0.95) 25%, rgba(250,250,250,0.1) 100%);
+}
+
+.artistCardTitle{
+    position: relative;
+    top: 160px;
+    text-align: center;
+    font-size: 16pt;
+    letter-spacing: 1.5px;
 }
