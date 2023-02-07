@@ -6,16 +6,22 @@
   </div>
   <UpcomingConcerts />
   <TopFavoriteArtists />
+  <RegisterNewsletter />
+  <Footer />
 </template>
 
 <script>
 import UpcomingConcerts from "@/components/UpcomingConcerts.vue";
 import TopFavoriteArtists from "@/components/TopFavoriteArtists.vue";
+import RegisterNewsletter from "@/components/RegisterNewsletter.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   components: {
     UpcomingConcerts,
     TopFavoriteArtists,
+    RegisterNewsletter,
+    Footer,
   },
 }
 </script>
