@@ -253,3 +253,115 @@ a {
 .footerSitemap a{
     color: #F7F4F2;
 }
+
+.loginForm{
+    width: 60%;
+}
+
+.loginPicture{
+    width: 40%;
+    height: 650px;
+    background-image: url("@/assets/img/LoginImage.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.loginPage{
+    display: flex;
+}
+
+.logoImage{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.wrapperLoginRegister{
+    margin: 0 auto;
+    width: 50%;
+}
+
+.formInputStyle{
+    border: 1px solid #182135;
+    border-radius: 5px;
+    width: 350px;
+    margin: 5px 0 5px 0;
+    padding: 15px 10px;
+    font-size: 11pt;
+}
+
+.registerButtonStyle{
+    background-color: #0A1733;
+    color: #F7F4F2;
+    width: 120px;
+    font-size: 11pt;
+    border: none;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.loginButtonStyle{
+    background-color: #0A1733;
+    color: #F7F4F2;
+    width: 80px;
+    font-size: 11pt;
+    border-radius: 5px;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    position: relative;
+    left: 170px;
+}
+.loginButtonStyleRegister{
+    background-color: #0A1733;
+    color: #F7F4F2;
+    width: 80px;
+    font-size: 11pt;
+    border-radius: 5px;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.registerButtonStyleRegister{
+    background-color: #0A1733;
+    color: #F7F4F2;
+    width: 120px;
+    font-size: 11pt;
+    border: none;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    position: relative;
+    left: 170px;
+}
+
+.buttonsForm{
+    margin-top: 50px;
+}
+
+.forgotForm{
+    font-size: 9pt;
+    opacity: 0.5;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.aboveRegisterText{
+    font-size: 10pt;
+    margin-bottom: 10px;
+}
+
+.aboveInputText{
+    font-size: 12pt;
+    padding-left: 10px;
+    color: #0A1733;
+}
+
+.paddingIconForm{
+    padding-right: 5px;
+}

@@ -14,36 +14,57 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomePage,
+      meta: {
+        hideNavbar: false,
+       },
     },
     {
       path: "/about",
       name: "about",
       component: AboutPage,
+      meta: {
+        hideNavbar: false,
+       },
     },
     {
       path: "/concerts",
       name: "concerts",
       component: ConcertsPage,
+      meta: {
+        hideNavbar: false,
+       },
     },
     {
       path: "/login",
       name: "login",
       component: LoginPage,
+      meta: {
+        hideNavbar: true,
+       },
     },
     {
       path: "/register",
       name: "register",
       component: RegisterPage,
+      meta: {
+        hideNavbar: true,
+       },
     },
     {
       path: "/profile",
       name: "profile",
       component: ProfilePage,
+      meta: {
+        hideNavbar: false,
+       },
     },
     {
       path: "/reservations",
       name: "reservations",
       component: ReservationsPage,
+      meta: {
+        hideNavbar: false,
+       },
     },
   ],
 });

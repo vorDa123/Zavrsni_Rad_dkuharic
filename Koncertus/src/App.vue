@@ -1,9 +1,8 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
 </script>
-
 <template>
-  <nav>
+  <nav v-if="!$route.meta.hideNavbar">
     <RouterLink to="/concerts" class="middleAlign notLogo">CONCERTS</RouterLink>
     <RouterLink to="/profile" class="middleAlign notLogo">MY PROFILE</RouterLink>
     <RouterLink to="/">
