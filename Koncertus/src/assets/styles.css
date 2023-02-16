@@ -17,6 +17,7 @@ nav {
     justify-content: center;
     align-items: middle;
     position: fixed;
+    top: 0;
     z-index: 10000;
 }
 
@@ -58,6 +59,7 @@ a {
     height: 576px;
     background-image: url("@/assets/img/Home_Hero.png");
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
