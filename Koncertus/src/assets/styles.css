@@ -398,6 +398,8 @@ a {
   background: #112455;
   color: #f7f4f2;
   margin-bottom: 10px;
+  border-radius: 10px;
+  height: 145px;
 }
 
 .odd.left {
@@ -411,6 +413,8 @@ a {
 .even {
   background: #F7F4F2;
   margin-bottom: 10px;
+  border-radius: 10px;
+  height: 145px;
 }
 
 .even.left {
@@ -419,4 +423,74 @@ a {
 
 .even.right {
   margin-left: 5px;
+}
+
+.concertImage{
+  width: 200px;
+  height: 100px;
+  border-radius: 10px;
+  background-image: url("@/assets/img/disturbed.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.inline{
+  display: flex;
+}
+
+.paddingIcons {
+  padding: 0px 5px 0px 15px;
+}
+
+.iconFontSize{
+  font-size: 9pt;
+  padding-top: 28px;
+}
+
+.paddingTopContent{
+  padding-top: 22px;
+}
+
+.paddingTopDate{
+  padding-top: 50px;
+  text-align: center;
+}
+
+.widthContent{
+  width: 550px;
+}
+
+.alignCenter{
+  text-align: center;
+}
+
+.descriptionFontSize{
+  font-size: 10pt;
+  padding-top: 5px;
+}
+
+.shoppingCart{
+  font-size: 15pt;
+}
+
+.buttonMargin{
+  margin-top: 55px;
+}
+
+.blueButton{
+  background-color: #0a1733;
+  color: #f7f4f2;
+  padding: 5px 10px;
+  font-size: 11pt;
+  border: none;
+  cursor: pointer;
+}
+
+.whiteButton{  
+  background-color: #f7f4f2;
+  color: #0a1733;
+  padding: 5px 10px;
+  font-size: 11pt;
+  border: none;
+  cursor: pointer;
 }
