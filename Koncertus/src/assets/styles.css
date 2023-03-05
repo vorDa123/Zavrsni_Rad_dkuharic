@@ -411,7 +411,8 @@ a {
 }
 
 .even {
-  background: #F7F4F2;
+  background: #f7f4f2;
+  color: #0a1733;
   margin-bottom: 10px;
   border-radius: 10px;
   height: 145px;
@@ -425,7 +426,7 @@ a {
   margin-left: 5px;
 }
 
-.concertImage{
+.concertImage {
   width: 200px;
   height: 100px;
   border-radius: 10px;
@@ -434,7 +435,7 @@ a {
   background-repeat: no-repeat;
 }
 
-.inline{
+.inline {
   display: flex;
 }
 
@@ -442,42 +443,42 @@ a {
   padding: 0px 5px 0px 15px;
 }
 
-.iconFontSize{
+.iconFontSize {
   font-size: 9pt;
   padding-top: 28px;
 }
 
-.paddingTopContent{
+.paddingTopContent {
   padding-top: 22px;
 }
 
-.paddingTopDate{
+.paddingTopDate {
   padding-top: 50px;
   text-align: center;
 }
 
-.widthContent{
+.widthContent {
   width: 550px;
 }
 
-.alignCenter{
+.alignCenter {
   text-align: center;
 }
 
-.descriptionFontSize{
+.descriptionFontSize {
   font-size: 10pt;
   padding-top: 5px;
 }
 
-.shoppingCart{
+.shoppingCart {
   font-size: 15pt;
 }
 
-.buttonMargin{
+.buttonMargin {
   margin-top: 55px;
 }
 
-.blueButton{
+.blueButton {
   background-color: #0a1733;
   color: #f7f4f2;
   padding: 5px 10px;
@@ -486,7 +487,7 @@ a {
   cursor: pointer;
 }
 
-.whiteButton{  
+.whiteButton {
   background-color: #f7f4f2;
   color: #0a1733;
   padding: 5px 10px;
@@ -494,3 +495,87 @@ a {
   border: none;
   cursor: pointer;
 }
+
+.topTenPlayerContainer {
+  display: flex;
+}
+
+.topTenSongs {
+  width: 100%;
+  background: #112455;
+  color: #f7f4f2;
+}
+
+.nowPlaying {
+  width: inherit;
+  background: black;
+  opacity: 0.6;
+}
+
+.playNext {
+  width: 100%;
+}
+
+.songImage {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  background-image: url("@/assets/img/disturbed.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.paddingTopNumber {
+  padding-top: 40px;
+  text-align: center;
+}
+
+.marginLeftNumber {
+  margin-left: 110px;
+}
+
+.marginLeftNumberSecondColumn {
+  margin-left: 50px;
+}
+
+.paddingSameLine {
+  padding-top: 10px;
+}
+
+.lineHeight {
+  line-height: 22px;
+}
+
+.positionTopTenTitle {
+  margin-left: 115px;
+  padding: 15px 0;
+  font-size: 14pt;
+}
+
+.rowGap {
+  margin: 5px 0 15px 0;
+}
+
+.playButtonStyle {
+  background-color: #f7f4f2;
+  color: #0a1733;
+  border: none;
+  width: 50px;
+  padding: 2px;
+  border-radius: 18px;
+  font-size: 9pt;
+  cursor: pointer;
+}
+
+.smallerFont {
+  font-size: 10pt;
+}
+
+.backgroundImagePlayer {
+  width: inherit;
+  height: 550px;
+  background-image: url("@/assets/img/disturbed.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
