@@ -260,10 +260,71 @@
     <div class="column">
       <div class="backgroundImagePlayer">
         <div class="nowPlaying">
-          <div class="playerContent"></div>
+          <div class="playerContentText">
+            <div class="artistSong">
+              <p class="uppercase bold playerArtist">Disturbed</p>
+              <p class="playerSong">Uninvited guest</p>
+            </div>
+            <br />
+            <div class="sliders">
+              <div class="slideContainer">
+                <font-awesome-icon
+                  icon="fa-solid fa-pause"
+                  class="paddingRightCardIcon positionSlider"
+                /><input
+                  type="range"
+                  min="1"
+                  max="100"
+                  value="0"
+                  class="slider durationSlider"
+                  id="myRange"
+                />
+                <span>4:15</span>
+              </div>
+              <div class="slideContainer volumeSliderContainer">
+                <font-awesome-icon
+                  icon="fa-solid fa-volume-high"
+                  class="paddingRightCardIcon positionSlider"
+                /><input
+                  type="range"
+                  min="1"
+                  max="100"
+                  value="50"
+                  class="slider"
+                  id="myRange"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="playerButtons">
+            <button class="playerButtonStyle">
+              <font-awesome-icon
+                icon="fa-solid fa-share-nodes"
+                class="paddingRightCardIcon"
+              />Share
+            </button>
+            <button class="playerButtonStyle">
+              <font-awesome-icon
+                icon="fa-solid fa-repeat"
+                class="paddingRightCardIcon"
+              />Repeat
+            </button>
+            <button class="playerButtonStyle">
+              <font-awesome-icon
+                icon="fa-solid fa-forward"
+                id="previousIcon"
+              />Previous
+            </button>
+            <button class="playerButtonStyle">
+              <font-awesome-icon
+                icon="fa-solid fa-forward"
+                class="paddingRightCardIcon"
+              />Next
+            </button>
+          </div>
+          <div class="playerContent" />
         </div>
       </div>
-      <div class="playNext">Play next</div>
     </div>
   </div>
 </template>
