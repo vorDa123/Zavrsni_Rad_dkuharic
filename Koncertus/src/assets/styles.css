@@ -687,3 +687,103 @@ a {
   opacity: 0.85;
   color: #f7f4f2;
 }
+
+.profileInfoAndNotifications {
+  width: inherit;
+  height: 235px;
+  display: flex;
+  gap: 15px;
+}
+
+.profileInfo {
+  width: 60%;
+  background-color: #f7f4f2;
+  border-radius: 10px;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.notifications {
+  width: 40%;
+  background-color: #f7f4f2;
+  border-radius: 10px;
+}
+.profilePicture {
+  border-radius: 10px 0 0 10px;
+  width: 30%;
+  height: 100%;
+  background-image: url("@/assets/img/profilepic.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.profileInfoContent input {
+  background: none;
+  border: none;
+  color: #00030a;
+}
+
+.verticalLine {
+  height: 90%;
+  border-right: 1px solid black;
+}
+
+.socialMediaIconsSizeProfile {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.notFirst {
+  margin: 15px 0 0 0;
+}
+
+.profileInfoContent {
+  width: 300px;
+}
+
+.nextConcertTitle {
+  margin-left: 45px;
+  margin-top: 10px;
+}
+
+.nextConcertProfile {
+  width: 85%;
+  height: 80%;
+  margin-left: 45px;
+  margin-top: 5px;
+  display: flex;
+  gap: 25px;
+}
+
+.nextConcertImage {
+  width: 50%;
+  height: 100%;
+  background-image: url("@/assets/img/disturbed.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.marginTopNextConcerts {
+  margin-top: 20px;
+}
+
+.topFiveAndReservations {
+  width: inherit;
+  height: 750px;
+  margin-top: 15px;
+  display: flex;
+  gap: 15px;
+}
+
+.topFive {
+  width: 40%;
+  background-color: #f7f4f2;
+  border-radius: 10px;
+}
+
+.myReservations {  
+  width: 60%;
+  background-color: #f7f4f2;
+  border-radius: 10px;
+}

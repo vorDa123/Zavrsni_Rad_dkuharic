@@ -1,16 +1,15 @@
 <template>
-  <div class="wrapper">
-    <h1>Profile</h1>
-  </div>
-
+  <MyProfile />
   <Footer />
 </template>
 <script>
 import Footer from "@/components/Footer.vue";
+import MyProfile from "@/components/MyProfile.vue";
 
 export default {
   components: {
     Footer,
+    MyProfile,
   },
-}
+};
 </script>
