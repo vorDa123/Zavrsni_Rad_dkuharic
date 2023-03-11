@@ -1,16 +1,15 @@
 <template>
-  <div class="wrapper">
-    <h1>About</h1>
-  </div>
-
+  <About />
   <Footer />
 </template>
 <script>
+import About from "@/components/About.vue";
 import Footer from "@/components/Footer.vue";
 
 export default {
   components: {
+    About,
     Footer,
   },
-}
+};
 </script>
