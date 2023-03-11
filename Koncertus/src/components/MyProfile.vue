@@ -75,8 +75,215 @@
       </div>
     </div>
     <div class="topFiveAndReservations">
-        <div class="topFive"></div>
-        <div class="myReservations"></div>
+      <div class="topFive">
+        <h2 class="uppercase favoriteTitle">Favorite artists</h2>
+        <div class="artistProfile">
+          <div class="artistImageProfile" />
+          <p class="uppercase artistName">Disturbed</p>
+        </div>
+        <div class="artistProfile">
+          <div class="artistImageProfile" />
+          <p class="uppercase artistName">Disturbed</p>
+        </div>
+        <div class="artistProfile">
+          <div class="artistImageProfile" />
+          <p class="uppercase artistName">Disturbed</p>
+        </div>
+        <div class="artistProfile">
+          <div class="artistImageProfile" />
+          <p class="uppercase artistName">Disturbed</p>
+        </div>
+        <div class="artistProfile">
+          <div class="artistImageProfile" />
+          <p class="uppercase artistName">Disturbed</p>
+        </div>
+        <div class="artistProfile">
+          <div class="artistImageProfile" />
+          <p class="uppercase artistName">Disturbed</p>
+        </div>
+        <div class="artistProfile">
+          <div class="artistImageProfile" />
+          <p class="uppercase artistName">Disturbed</p>
+        </div>
+      </div>
+      <div class="myReservations">
+        <div class="sameLine">
+          <h2 class="uppercase favoriteTitle">My reservations</h2>
+          <div>
+            <font-awesome-icon
+              icon="fa-solid fa-magnifying-glass"
+              class="paddingRightCardIcon"
+            />
+            <input
+              type="search"
+              name="searchReservation"
+              class="searchbar"
+              placeholder="Search concerts, artist,..."
+            />
+          </div>
+        </div>
+        <div class="reservationContainer inline">
+          <div class="paddingIcons paddingTopDateReservation">
+            <p class="bold">16</p>
+            <p class="bold">NOV</p>
+          </div>
+          <div
+            class="inline paddingIcons paddingTopContent widthContentReservation"
+          >
+            <div class="concertImageReservation" />
+            <div class="paddingIcons">
+              <p class="bold">DISTURBED</p>
+              <p class="descriptionFontSize">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                sed enim eu leo dignissim elementum ut a urna.
+              </p>
+              <div class="inline iconFontSize iconPaddingReservation">
+                <p>
+                  <font-awesome-icon icon="fa-solid fa-calendar" />
+                  16.11.2023.
+                </p>
+                <p>
+                  <font-awesome-icon
+                    icon="fa-solid fa-clock"
+                    class="paddingIcons"
+                  />21:45
+                </p>
+                <p>
+                  <font-awesome-icon
+                    icon="fa-solid fa-location-dot"
+                    class="paddingIcons"
+                  />Arena Zagreb
+                </p>
+                <p class="paddingIcons">Price: 100 EUR</p>
+              </div>
+            </div>
+            <div class="buttonPositionReservation">
+              <button class="blueButton">BUY</button>
+            </div>
+          </div>
+        </div>        
+        <div class="reservationContainer inline">
+          <div class="paddingIcons paddingTopDateReservation">
+            <p class="bold">16</p>
+            <p class="bold">NOV</p>
+          </div>
+          <div
+            class="inline paddingIcons paddingTopContent widthContentReservation"
+          >
+            <div class="concertImageReservation" />
+            <div class="paddingIcons">
+              <p class="bold">DISTURBED</p>
+              <p class="descriptionFontSize">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                sed enim eu leo dignissim elementum ut a urna.
+              </p>
+              <div class="inline iconFontSize iconPaddingReservation">
+                <p>
+                  <font-awesome-icon icon="fa-solid fa-calendar" />
+                  16.11.2023.
+                </p>
+                <p>
+                  <font-awesome-icon
+                    icon="fa-solid fa-clock"
+                    class="paddingIcons"
+                  />21:45
+                </p>
+                <p>
+                  <font-awesome-icon
+                    icon="fa-solid fa-location-dot"
+                    class="paddingIcons"
+                  />Arena Zagreb
+                </p>
+                <p class="paddingIcons">Price: 100 EUR</p>
+              </div>
+            </div>
+            <div class="buttonPositionReservation">
+              <button class="blueButton">BUY</button>
+            </div>
+          </div>
+        </div>        
+        <div class="reservationContainer inline">
+          <div class="paddingIcons paddingTopDateReservation">
+            <p class="bold">16</p>
+            <p class="bold">NOV</p>
+          </div>
+          <div
+            class="inline paddingIcons paddingTopContent widthContentReservation"
+          >
+            <div class="concertImageReservation" />
+            <div class="paddingIcons">
+              <p class="bold">DISTURBED</p>
+              <p class="descriptionFontSize">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                sed enim eu leo dignissim elementum ut a urna.
+              </p>
+              <div class="inline iconFontSize iconPaddingReservation">
+                <p>
+                  <font-awesome-icon icon="fa-solid fa-calendar" />
+                  16.11.2023.
+                </p>
+                <p>
+                  <font-awesome-icon
+                    icon="fa-solid fa-clock"
+                    class="paddingIcons"
+                  />21:45
+                </p>
+                <p>
+                  <font-awesome-icon
+                    icon="fa-solid fa-location-dot"
+                    class="paddingIcons"
+                  />Arena Zagreb
+                </p>
+                <p class="paddingIcons">Price: 100 EUR</p>
+              </div>
+            </div>
+            <div class="buttonPositionReservation">
+              <button class="blueButton">BUY</button>
+            </div>
+          </div>
+        </div>        
+        <div class="reservationContainer inline">
+          <div class="paddingIcons paddingTopDateReservation">
+            <p class="bold">16</p>
+            <p class="bold">NOV</p>
+          </div>
+          <div
+            class="inline paddingIcons paddingTopContent widthContentReservation"
+          >
+            <div class="concertImageReservation" />
+            <div class="paddingIcons">
+              <p class="bold">DISTURBED</p>
+              <p class="descriptionFontSize">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+                sed enim eu leo dignissim elementum ut a urna.
+              </p>
+              <div class="inline iconFontSize iconPaddingReservation">
+                <p>
+                  <font-awesome-icon icon="fa-solid fa-calendar" />
+                  16.11.2023.
+                </p>
+                <p>
+                  <font-awesome-icon
+                    icon="fa-solid fa-clock"
+                    class="paddingIcons"
+                  />21:45
+                </p>
+                <p>
+                  <font-awesome-icon
+                    icon="fa-solid fa-location-dot"
+                    class="paddingIcons"
+                  />Arena Zagreb
+                </p>
+                <p class="paddingIcons">Price: 100 EUR</p>
+              </div>
+            </div>
+            <div class="buttonPositionReservation">
+              <button class="blueButton">BUY</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  <br />
 </template>
