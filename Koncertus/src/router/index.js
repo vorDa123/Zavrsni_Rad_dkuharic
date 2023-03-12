@@ -5,7 +5,6 @@ import ConcertsPage from "@/views/ConcertsPage.vue";
 import LoginPage from "@/views/LoginPage.vue";
 import RegisterPage from "@/views/RegisterPage.vue";
 import ProfilePage from "@/views/ProfilePage.vue";
-import ReservationsPage from "@/views/ReservationsPage.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -57,15 +56,7 @@ const router = createRouter({
       meta: {
         hideNavbar: false,
        },
-    },
-    {
-      path: "/reservations",
-      name: "reservations",
-      component: ReservationsPage,
-      meta: {
-        hideNavbar: false,
-       },
-    },
+    },    
   ],
 });
 

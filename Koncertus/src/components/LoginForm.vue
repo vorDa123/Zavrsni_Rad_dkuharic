@@ -8,7 +8,7 @@
                     </RouterLink>
                 </div>
                 <h1 class="uppercase">Login</h1>
-                <form>
+                <form method="post">
                     <p class="aboveInputText"><font-awesome-icon icon="fa-solid fa-envelope" class="paddingIconForm" />
                         Email</p>
                     <input type="email" placeholder="Enter your email here" class="formInputStyle" />
@@ -25,7 +25,7 @@
                             <button class="registerButtonStyle">REGISTER</button>
                         </RouterLink>
                         <RouterLink to="/">
-                            <button type="submit" class="loginButtonStyle">LOG IN</button>
+                            <input type="submit" class="loginButtonStyle" value="LOG IN">
                         </RouterLink>
                     </div>
                 </form>

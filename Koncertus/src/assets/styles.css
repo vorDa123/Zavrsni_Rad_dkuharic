@@ -862,3 +862,71 @@ a {
   top: 115px;
   right: 15px;
 }
+
+.aboutText{
+  width: 60%;
+  padding-right: 100px;
+  text-align: justify;
+}
+
+.aboutImage{
+  width: 40%;
+  background-image: url("@/assets/img/LoginImage.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* .faqContainer{
+  width: 60%;
+  margin-right: 100px;
+} */
+
+.questionAnswer{
+  background-color: #f7f4f2;
+  border-radius: 10px;
+  padding: 20px 20px;
+  margin-bottom: 15px;
+}
+
+.faqQuestion{
+  font-size: 18pt;
+  font-weight: 600;
+  line-height: 48px;
+}
+
+.inputSize{
+  width: 545px;
+  height: 50px;
+  margin: 8px 0 15px 0;
+}
+
+.positionCenter{
+  margin-left: 90px;
+}
+
+textarea{
+  margin: 8px 0 15px 0;
+}
+
+.sendButtonPosition{
+  position: relative;
+  left: 500px;
+  margin-bottom: 15px;
+}
+
+.faqSection{
+  background-color: #112455;
+}
+
+.whiteText{
+  color: #f7f4f2;
+}
+
+.faqTitle{
+  padding-top: 15px;
+}
+
+.wrapperFaq{
+  width: 50%;
+  margin: 0 auto;
+}
