@@ -75,6 +75,7 @@ a {
 .concertCardContainer {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   gap: 25px;
 }
 
@@ -128,6 +129,14 @@ a {
   padding: 15px 0 50px 0;
 }
 
+/* .topArtists{
+  overflow: hidden;
+}
+
+.favoriteArtists{
+  overflow: hidden;
+} */
+
 .uppercase {
   text-transform: uppercase;
 }
@@ -139,6 +148,7 @@ a {
 .artistsCardsContainer {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -207,7 +217,7 @@ a {
 
 .footer {
   width: 100%;
-  height: 350px;
+  padding-bottom: 80px;
   background-color: #182135;
 }
 
