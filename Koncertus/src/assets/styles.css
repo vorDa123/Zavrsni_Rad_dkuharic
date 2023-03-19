@@ -949,11 +949,101 @@ textarea{
   margin: 0 auto;
 }
 
-/* @media only screen and (max-width: 1640px) and (min-width: 1270px) {
-  .concertCard {
-    border-radius: 20px 20px 0 0;
-    width: 200px;
-    height: 350px;
+@media only screen and (max-width: 412px) {
+  nav {
+    max-width: 412px;
+    width: 100%;
+    background-color: #0a1733;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: unset;
+    z-index: 10000;
+  }
+
+  .footerContent {
+    display: flex;
+    flex-direction: column;
+    color: #f7f4f2;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding-top: 20px;
+  }
+  
+  .footerSitemap {
+    line-height: 35px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .footerContact {
+    line-height: 35px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .newsletterTextButton {
+    max-width: 412px;
+    width: 100%;
+    padding: 150px 0;
+  }
+
+  .newsletterInputField {
+    max-width: 180px;
+    width: 100%;
+    height: 50px;
+    border: 1px solid #0a1733;
+    padding-left: 5px;
+  }
+  
+  .newsletterButton {
+    width: 90px;
+    height: 53px;
+    border: none;
+    background-color: #0a1733;
+    color: #f7f4f2;
+    font-weight: 500;
     cursor: pointer;
   }
-} */
+
+  .newsletterCover {
+    max-width: 412px;
+    width: 100%;
+    height: 576px;
+    background-image: url("@/assets/img/Newsletter.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .commentHeroText {
+    color: #f7f4f2;
+    font-weight: bold;
+    font-size: 24pt;
+    padding: 0 25px;
+    text-align: center;
+  }
+
+  .footerSocialMediaLogo {
+    width: 100%;
+    text-align: center;
+  }
+
+  .artistsCardsContainer {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 10px;
+    align-items: center;
+  }
+  .concertCardContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 25px;
+    align-items: center;
+  }
+}
