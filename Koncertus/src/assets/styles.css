@@ -81,7 +81,8 @@ a {
 
 .concertCard {
   border-radius: 20px 20px 0 0;
-  width: 300px;
+  max-width: 300px;
+  width: 100%;
   height: 450px;
   cursor: pointer;
 }
@@ -146,14 +147,15 @@ a {
 }
 
 .artistsCardsContainer {
-  width: 100%;
+  max-width: 100%;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
 
 .artistCard {
-  width: 205px;
+  max-width: 205px;
+  width: 100%;
   height: 200px;
   border-radius: 10px;
   background-image: url("@/assets/img/disturbed.png");
@@ -193,13 +195,13 @@ a {
 
 .newsletterTextButton {
   width: 60%;
-  position: relative;
-  top: 200px;
-  left: 300px;
+  padding-top: 200px;
+  padding-left: 300px;
 }
 
 .newsletterInputField {
-  width: 570px;
+  max-width: 570px;
+  width: 100%;
   height: 50px;
   border: 1px solid #0a1733;
   padding-left: 5px;
@@ -469,7 +471,8 @@ a {
 }
 
 .widthContent {
-  width: 550px;
+  max-width: 550px;
+  width: 100%;
 }
 
 .alignCenter {
@@ -595,7 +598,7 @@ a {
 
 .playerContent {
   width: 100%;
-  height: 175px;
+  max-height: 175px;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -663,7 +666,8 @@ a {
 }
 
 .durationSlider {
-  width: 350px;
+  max-width: 350px;
+  width: 100%;
 }
 
 .volumeSliderContainer {
@@ -750,7 +754,8 @@ a {
 }
 
 .profileInfoContent {
-  width: 300px;
+  max-width: 300px;
+  width: 100%;
 }
 
 .nextConcertTitle {
@@ -845,11 +850,13 @@ a {
 }
 
 .widthContentReservation {
-  width: 750px;
+  max-width: 750px;
+  width: 100%;
 }
 
 .concertImageReservation {
-  width: 200px;
+  max-width: 200px;
+  width: 100%;
   height: 150px;
   border-radius: 10px;
   background-image: url("@/assets/img/disturbed.png");
@@ -905,7 +912,8 @@ a {
 }
 
 .inputSize{
-  width: 545px;
+  max-width: 545px;
+  width: 100%;
   height: 50px;
   margin: 8px 0 15px 0;
 }
@@ -940,3 +948,12 @@ textarea{
   width: 50%;
   margin: 0 auto;
 }
+
+/* @media only screen and (max-width: 1640px) and (min-width: 1270px) {
+  .concertCard {
+    border-radius: 20px 20px 0 0;
+    width: 200px;
+    height: 350px;
+    cursor: pointer;
+  }
+} */
