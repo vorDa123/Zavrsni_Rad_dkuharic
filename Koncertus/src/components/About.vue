@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper marginTop">
-    <h1>About</h1>
-    <div class="inline">
+    <div class="inlineAbout">
       <div class="aboutText">
+        <h1 class="uppercase">About</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent at
           pretium felis. In sollicitudin ullamcorper nisl. Nullam ullamcorper
@@ -32,7 +32,14 @@
           Phasellus id vulputate nibh, ut mattis nunc.
         </p>
       </div>
-      <div class="aboutImage" />
+      <div class="contactDetails">
+        <h1 class="uppercase">Contact details</h1>
+        <p>Address: Turanjska ulica 3G, Zagreb, Croatia</p>
+        <br/>
+        <p>E-mail: dkuharic@tvz.hr</p>
+        <br/>
+        <p>Phone: +385 91 497 6618</p>
+      </div>
     </div>
   </div>
   <div class="faqSection">
@@ -103,9 +110,11 @@
             class="inputSize"
           />
           <br />
-          <label for="textarea" class="whiteText">Describe your question:</label>
+          <label for="textarea" class="whiteText"
+            >Describe your question:</label
+          >
           <br />
-          <textarea name="textarea" rows="20" cols="80"></textarea>
+          <textarea name="textarea" rows="20" cols="80" class="textAreaWidth"></textarea>
           <br />
           <input
             type="submit"
@@ -128,6 +137,6 @@
         referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
     </div>
-    <br/>
+    <br />
   </div>
 </template>
