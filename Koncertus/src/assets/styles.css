@@ -197,7 +197,7 @@ a {
 .newsletterTextButton {
   width: 60%;
   padding-top: 200px;
-  padding-left: 300px;
+  padding-left: 350px;
 }
 
 .newsletterInputField {
@@ -206,11 +206,12 @@ a {
   height: 50px;
   border: 1px solid #0a1733;
   padding-left: 5px;
+  margin-left: 100px;
 }
 
 .newsletterButton {
   width: 90px;
-  height: 53px;
+  height: 54px;
   border: none;
   background-color: #0a1733;
   color: #f7f4f2;
@@ -297,7 +298,7 @@ a {
 
 .wrapperLoginRegister {
   margin: 0 auto;
-  width: 50%;
+  width: 35%;
 }
 
 .formInputStyle {
@@ -413,7 +414,7 @@ a {
   color: #f7f4f2;
   margin-bottom: 10px;
   border-radius: 10px;
-  height: 145px;
+  height: 160px;
 }
 
 .odd.left {
@@ -429,7 +430,7 @@ a {
   color: #0a1733;
   margin-bottom: 10px;
   border-radius: 10px;
-  height: 145px;
+  height: 160px;
 }
 
 .even.left {
@@ -442,7 +443,7 @@ a {
 
 .concertImage {
   width: 200px;
-  height: 100px;
+  height: 115px;
   border-radius: 10px;
   background-image: url("@/assets/img/disturbed.png");
   background-size: cover;
@@ -459,7 +460,7 @@ a {
 
 .iconFontSize {
   font-size: 9pt;
-  padding-top: 28px;
+  padding-top: 44px;
 }
 
 .paddingTopContent {
@@ -467,12 +468,12 @@ a {
 }
 
 .paddingTopDate {
-  padding-top: 50px;
+  padding-top: 62px;
   text-align: center;
 }
 
 .widthContent {
-  max-width: 550px;
+  max-width: 695px;
   width: 100%;
 }
 
@@ -490,7 +491,7 @@ a {
 }
 
 .buttonMargin {
-  margin-top: 55px;
+  margin-top: 68px;
 }
 
 .blueButton {
@@ -659,11 +660,11 @@ a {
 }
 
 .artistSong {
-  margin-left: 190px;
+  margin-left: 290px;
 }
 
 .positionSlider {
-  margin-left: 190px;
+  margin-left: 290px;
 }
 
 .durationSlider {
@@ -716,7 +717,7 @@ a {
   background-color: #f7f4f2;
   border-radius: 10px;
   display: flex;
-  gap: 50px;
+  gap: 85px;
   align-items: center;
 }
 
@@ -872,12 +873,12 @@ a {
 
 .iconPaddingReservation {
   position: relative;
-  top: 48px;
+  top: 35px;
 }
 
 .buttonPositionReservation {
   position: relative;
-  top: 115px;
+  top: 125px;
   right: 15px;
 }
 
@@ -915,7 +916,7 @@ a {
 }
 
 .inputSize {
-  max-width: 545px;
+  max-width: 740px;
   width: 100%;
   height: 50px;
   margin: 8px 0 15px 0;
@@ -931,7 +932,7 @@ textarea {
 
 .sendButtonPosition {
   position: relative;
-  left: 500px;
+  left: 692px;
   margin-bottom: 15px;
 }
 
@@ -950,6 +951,238 @@ textarea {
 .wrapperFaq {
   width: 50%;
   margin: 0 auto;
+}
+
+@media only screen and (1281px <= width <= 1440px) {
+  .concertCard {
+    border-radius: 20px 20px 0 0;
+    max-width: 250px;
+    width: 100%;
+    height: 350px;
+    cursor: pointer;
+  }
+
+  .concertCardText {
+    width: 100%;
+    height: 50%;
+    background-color: #f7f4f2;
+    line-height: 35px;
+    font-size: 11pt;
+  }
+
+  .artistCard {
+    max-width: 185px;
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+    background-image: url("@/assets/img/disturbed.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  .artistCardTitle {
+    position: relative;
+    top: 140px;
+    text-align: center;
+    font-size: 16pt;
+    letter-spacing: 1.5px;
+  }
+
+  .profileInfo {
+    width: 60%;
+    background-color: #f7f4f2;
+    border-radius: 10px;
+    display: flex;
+    gap: 45px;
+    align-items: center;
+  }
+
+  .artistSong {
+    margin-left: 175px;
+  }
+
+  .positionSlider {
+    margin-left: 175px;
+  }
+
+  .marginLeftNumber {
+    margin-left: 90px;
+  }
+
+  .positionTopTenTitle {
+    margin-left: 100px;
+    padding: 15px 0;
+    font-size: 14pt;
+  }
+
+  .newsletterInputField {
+    max-width: 580px;
+    width: 100%;
+    height: 50px;
+    border: 1px solid #0a1733;
+    padding-left: 5px;
+    margin-left: 0px;
+  }
+
+  .positionCenter {
+    margin-left: 0px;
+  }
+
+  .inputSize {
+    max-width: 710px;
+    width: 100%;
+    height: 50px;
+    margin: 8px 0 15px 0;
+  }
+
+  .textAreaWidth {
+    max-width: 710px;
+    width: 100%;
+  }
+
+  .sendButtonPosition {
+    position: relative;
+    left: 665px;
+    margin-bottom: 15px;
+  }
+
+  .wrapperLoginRegister {
+    margin: 0 auto;
+    width: 50%;
+  }
+
+  .shoppingCart {
+    font-size: 15pt;
+    padding-right: 10px;
+  }
+}
+
+@media only screen and (811px <= width <= 1280px) {
+  .concertCard {
+    border-radius: 20px 20px 0 0;
+    max-width: 200px;
+    width: 100%;
+    height: 300px;
+    cursor: pointer;
+  }
+
+  .concertCardText {
+    width: 100%;
+    height: 50%;
+    background-color: #f7f4f2;
+    line-height: 35px;
+    font-size: 11pt;
+  }
+
+  .artistCard {
+    max-width: 155px;
+    width: 100%;
+    height: 150px;
+    border-radius: 10px;
+    background-image: url("@/assets/img/disturbed.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+    cursor: pointer;
+  }
+
+  .artistCardTitle {
+    position: relative;
+    top: 115px;
+    text-align: center;
+    font-size: 16pt;
+    letter-spacing: 1.5px;
+  }
+
+  .newsletterTextButton {
+    width: 70%;
+    padding-top: 200px;
+    padding-left: 220px;
+  }
+
+  .newsletterInputField {
+    max-width: 580px;
+    width: 100%;
+    height: 50px;
+    border: 1px solid #0a1733;
+    padding-left: 5px;
+    margin-left: 0px;
+  }
+
+  .iconFontSize {
+    font-size: 7pt;
+    padding-top: 28px;
+  }
+
+  .widthContentReservation .iconFontSize{
+    font-size: 8pt;
+    padding-top: 45px;
+  }
+
+  .marginLeftNumber {
+    margin-left: 30px;
+  }
+
+  .marginLeftNumberSecondColumn {
+    margin-left: 10px;
+  }
+
+  .artistSong {
+    margin-left: 130px;
+  }
+
+  .positionSlider {
+    margin-left: 130px;
+  }
+
+  .positionTopTenTitle {
+    margin-left: 40px;
+    padding: 15px 0;
+    font-size: 14pt;
+  }
+
+  .profileInfo {
+    width: 60%;
+    background-color: #f7f4f2;
+    border-radius: 10px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .positionCenter {
+    margin-left: 0px;
+  }
+
+  .inputSize {
+    max-width: 630px;
+    width: 100%;
+    height: 50px;
+    margin: 8px 0 15px 0;
+  }
+
+  .textAreaWidth {
+    max-width: 630px;
+    width: 100%;
+  }
+
+  .sendButtonPosition {
+    position: relative;
+    left: 585px;
+    margin-bottom: 15px;
+  }
+
+  .wrapperLoginRegister {
+    margin: 0 auto;
+    width: 50%;
+  }
+
+  .shoppingCart {
+    font-size: 15pt;
+    padding-right: 10px;
+  }
 }
 
 @media only screen and (413px <= width <= 810px) {
@@ -990,6 +1223,15 @@ textarea {
     width: 100%;
     padding-top: 180px;
     padding-left: 0px;
+  }
+
+  .newsletterInputField {
+    max-width: 580px;
+    width: 100%;
+    height: 50px;
+    border: 1px solid #0a1733;
+    padding-left: 5px;
+    margin-left: 0px;
   }
 
   .footerContent {
@@ -1183,7 +1425,7 @@ textarea {
     background-color: #fffefe;
     border-radius: 10px;
     width: 90%;
-    height: 150px;
+    height: 175px;
     padding-bottom: 0px;
     margin: 20px 0 0 24px;
   }
@@ -1215,13 +1457,33 @@ textarea {
 
   .buttonPositionReservation {
     position: relative;
-    top: 80px;
+    top: 110px;
     right: 15px;
   }
 
   .iconFontSize {
-    font-size: 7pt;
-    padding-top: 15px;
+    font-size: 8pt;
+    padding-top: 48px;
+  }
+
+  .widthContentReservation .iconFontSize{
+    font-size: 8pt;
+    padding-top: 8px;
+  }
+
+  .widthContentReservation .inline{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .widthContentReservation .inline .removePaddingLeft {
+    padding-left: 0px;
+    font-weight: bold;
+  }
+
+  .shoppingCart {
+    font-size: 15pt;
+    padding-right: 10px;
   }
 
   .wrapperFaq {
@@ -1416,16 +1678,17 @@ textarea {
   }
 
   .newsletterInputField {
-    max-width: 180px;
+    max-width: 250px;
     width: 100%;
     height: 50px;
     border: 1px solid #0a1733;
     padding-left: 5px;
+    margin-left: 0px;
   }
 
   .newsletterButton {
     width: 90px;
-    height: 53px;
+    height: 54px;
     border: none;
     background-color: #0a1733;
     color: #f7f4f2;
@@ -1503,7 +1766,7 @@ textarea {
     color: #f7f4f2;
     margin-bottom: 10px;
     border-radius: 10px;
-    height: 145px;
+    height: 415px;
   }
 
   .odd.left {
@@ -1519,7 +1782,7 @@ textarea {
     color: #0a1733;
     margin-bottom: 10px;
     border-radius: 10px;
-    height: 145px;
+    height: 415px;
   }
 
   .even.left {
@@ -1528,6 +1791,11 @@ textarea {
 
   .even.right {
     margin-left: 0px;
+  }
+
+  .paddingTopDate {
+    padding-top: 20px;
+    text-align: center;
   }
 
   .widthContent {
@@ -1560,14 +1828,68 @@ textarea {
     font-size: 9pt;
     padding-top: 10px;
   }
+  
+  .listOfConcerts .row .column .odd.inline{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .listOfConcerts .row .column .even.inline{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .listOfConcerts .row .column .odd .widthContent.inline{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .listOfConcerts .row .column .even .widthContent.inline{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .listOfConcerts .row .column .odd .widthContent .inline{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .listOfConcerts .row .column .even .widthContent .inline{
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+  .listOfConcerts .row .column .odd .widthContent .inline.iconFontSize > p{
+    line-height: 20px;
+  }
+
+  .listOfConcerts .row .column .even .widthContent .inline.iconFontSize > p{
+    line-height: 20px;
+  }
+
+  .shoppingCart{
+    position: relative;
+    bottom: 360px;
+    left: 100px;
+  }
+
+  .buttonMargin {
+    margin-top: 310px;
+  }
 
   .concertImage {
     width: 200px;
-    height: 100px;
+    height: 160px;
     border-radius: 10px;
     background-image: url("@/assets/img/disturbed.png");
     background-size: cover;
     background-repeat: no-repeat;
+    margin-bottom: 10px;
   }
 
   .marginLeftNumber {
@@ -1607,6 +1929,7 @@ textarea {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    height: 330px;
   }
 
   .profileInfo {
@@ -1614,7 +1937,7 @@ textarea {
     background-color: #f7f4f2;
     border-radius: 10px;
     display: flex;
-    gap: 25px;
+    gap: 20px;
     align-items: center;
   }
 
@@ -1627,7 +1950,6 @@ textarea {
 
   .topFiveAndReservations {
     width: 100%;
-    margin-top: 110px;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -1644,7 +1966,7 @@ textarea {
     margin-top: 8px;
   }
 
-  .nextConcertContent{
+  .nextConcertContent {
     font-size: 10pt;
   }
 
@@ -1669,6 +1991,54 @@ textarea {
     padding-bottom: 25px;
     margin: 20px 0 0 50px;
     color: #f7f4f2;
+  }
+
+  .myReservations .sameLine {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .searchBarAndIcon {
+    margin-left: 45px;
+  }
+
+  .paddingTopDateReservation {
+    padding-top: 10px;
+    text-align: center;
+  }
+
+  .reservationContainer.inline {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .reservationContainer .widthContentReservation .inline {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .removePaddingLeft {
+    padding-left: 0px;
+  }
+
+  .concertImageReservation {
+    display: none;
+  }
+
+  .buttonPositionReservation {
+    position: relative;
+    top: 120px;
+    right: 24px;
+  }
+
+  .iconPaddingReservation {
+    position: relative;
+    top: 0px;
+    font-weight: bold;
+    line-height: 18px;
   }
 
   .aboutText {
@@ -1706,10 +2076,15 @@ textarea {
     margin-bottom: 15px;
   }
 
+  .nextConcertTitle {
+    margin-left: 31px;
+    margin-top: 10px;
+  }
+
   .nextConcertProfile {
-    width: 100%;
-    height: 250px;
-    margin-left: 45px;
+    width: 85%;
+    height: 124px;
+    margin-left: 31px;
     margin-top: 5px;
     display: flex;
     gap: 25px;

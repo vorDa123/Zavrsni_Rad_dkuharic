@@ -109,7 +109,7 @@
       <div class="myReservations">
         <div class="sameLine">
           <h2 class="uppercase favoriteTitle">My reservations</h2>
-          <div>
+          <div class="searchBarAndIcon">
             <font-awesome-icon
               icon="fa-solid fa-magnifying-glass"
               class="paddingRightCardIcon"
@@ -145,16 +145,16 @@
                 <p>
                   <font-awesome-icon
                     icon="fa-solid fa-clock"
-                    class="paddingIcons"
+                    class="paddingIcons removePaddingLeft"
                   />21:45
                 </p>
                 <p>
                   <font-awesome-icon
                     icon="fa-solid fa-location-dot"
-                    class="paddingIcons"
+                    class="paddingIcons removePaddingLeft"
                   />Arena Zagreb
                 </p>
-                <p class="paddingIcons">Price: 100 EUR</p>
+                <p class="paddingIcons removePaddingLeft">Price: 100 EUR</p>
               </div>
             </div>
             <div class="buttonPositionReservation">
@@ -185,16 +185,16 @@
                 <p>
                   <font-awesome-icon
                     icon="fa-solid fa-clock"
-                    class="paddingIcons"
+                    class="paddingIcons removePaddingLeft"
                   />21:45
                 </p>
                 <p>
                   <font-awesome-icon
                     icon="fa-solid fa-location-dot"
-                    class="paddingIcons"
+                    class="paddingIcons removePaddingLeft"
                   />Arena Zagreb
                 </p>
-                <p class="paddingIcons">Price: 100 EUR</p>
+                <p class="paddingIcons removePaddingLeft">Price: 100 EUR</p>
               </div>
             </div>
             <div class="buttonPositionReservation">
@@ -225,16 +225,16 @@
                 <p>
                   <font-awesome-icon
                     icon="fa-solid fa-clock"
-                    class="paddingIcons"
+                    class="paddingIcons removePaddingLeft"
                   />21:45
                 </p>
                 <p>
                   <font-awesome-icon
                     icon="fa-solid fa-location-dot"
-                    class="paddingIcons"
+                    class="paddingIcons removePaddingLeft"
                   />Arena Zagreb
                 </p>
-                <p class="paddingIcons">Price: 100 EUR</p>
+                <p class="paddingIcons removePaddingLeft">Price: 100 EUR</p>
               </div>
             </div>
             <div class="buttonPositionReservation">
@@ -265,16 +265,16 @@
                 <p>
                   <font-awesome-icon
                     icon="fa-solid fa-clock"
-                    class="paddingIcons"
+                    class="paddingIcons removePaddingLeft"
                   />21:45
                 </p>
                 <p>
                   <font-awesome-icon
                     icon="fa-solid fa-location-dot"
-                    class="paddingIcons"
+                    class="paddingIcons removePaddingLeft"
                   />Arena Zagreb
                 </p>
-                <p class="paddingIcons">Price: 100 EUR</p>
+                <p class="paddingIcons removePaddingLeft">Price: 100 EUR</p>
               </div>
             </div>
             <div class="buttonPositionReservation">
