@@ -10,6 +10,11 @@ p {
   margin: 0;
 }
 
+.hamburgerNavigation {
+  display: none;
+}
+
+
 nav {
   width: 100%;
   background-color: #0a1733;
@@ -19,6 +24,18 @@ nav {
   position: fixed;
   top: 0;
   z-index: 10000;
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.carousel-item {
+  flex-basis: 300px;
+  margin: 0 10px;
 }
 
 nav a.middleAlign {
@@ -50,7 +67,7 @@ a {
 }
 
 .wrapper {
-  max-width: 85%;
+  max-width: 70%;
   margin: 0 auto;
 }
 
@@ -77,7 +94,6 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
-  justify-content: center;
 }
 
 .concertCard {
@@ -92,9 +108,6 @@ a {
   width: 100%;
   height: 50%;
   border-radius: inherit;
-  background-image: url("@/assets/img/disturbed.png");
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .concertCardText {
@@ -131,14 +144,6 @@ a {
   padding: 15px 0 50px 0;
 }
 
-/* .topArtists{
-  overflow: hidden;
-}
-
-.favoriteArtists{
-  overflow: hidden;
-} */
-
 .uppercase {
   text-transform: uppercase;
 }
@@ -159,9 +164,6 @@ a {
   width: 100%;
   height: 200px;
   border-radius: 10px;
-  background-image: url("@/assets/img/disturbed.png");
-  background-size: cover;
-  background-repeat: no-repeat;
   z-index: 1;
   cursor: pointer;
 }
@@ -206,7 +208,6 @@ a {
   height: 50px;
   border: 1px solid #0a1733;
   padding-left: 5px;
-  margin-left: 100px;
 }
 
 .newsletterButton {
@@ -717,7 +718,7 @@ a {
   background-color: #f7f4f2;
   border-radius: 10px;
   display: flex;
-  gap: 85px;
+  gap: 60px;
   align-items: center;
 }
 
@@ -897,11 +898,6 @@ a {
   display: flex;
 }
 
-/* .faqContainer{
-  width: 60%;
-  margin-right: 100px;
-} */
-
 .questionAnswer {
   background-color: #f7f4f2;
   border-radius: 10px;
@@ -953,7 +949,88 @@ textarea {
   margin: 0 auto;
 }
 
+@media only screen and (1441px <= width <= 1536px) {
+  .wrapper {
+    max-width: 85%;
+    margin: 0 auto;
+  }
+
+  .hamburgerNavigation {
+    display: none;
+  }
+
+  .newsletterInputField {
+    max-width: 570px;
+    width: 100%;
+    height: 50px;
+    border: 1px solid #0a1733;
+    padding-left: 5px;
+    margin-left: 0px;
+  }
+
+  .artistSong {
+    margin-left: 200px;
+  }
+
+  .positionSlider {
+    margin-left: 200px;
+  }
+
+  .shoppingCart {
+    font-size: 15pt;
+    padding-right: 10px;
+  }
+
+  .positionCenter {
+    margin-left: 0px;
+  }
+
+  .inputSize {
+    max-width: 760px;
+    width: 100%;
+    height: 50px;
+    margin: 8px 0 15px 0;
+  }
+
+  .textAreaWidth {
+    max-width: 760px;
+    width: 100%;
+  }
+
+  .sendButtonPosition {
+    position: relative;
+    left: 714px;
+    margin-bottom: 15px;
+  }
+
+  .profileInfo {
+    width: 60%;
+    background-color: #f7f4f2;
+    border-radius: 10px;
+    display: flex;
+    gap: 55px;
+    align-items: center;
+  }
+}
+
 @media only screen and (1281px <= width <= 1440px) {
+  .wrapper {
+    max-width: 85%;
+    margin: 0 auto;
+  }
+
+  .hamburgerNavigation {
+    display: none;
+  }
+
+  .concertCardContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+  }
+
   .concertCard {
     border-radius: 20px 20px 0 0;
     max-width: 250px;
@@ -975,9 +1052,6 @@ textarea {
     width: 100%;
     height: 180px;
     border-radius: 10px;
-    background-image: url("@/assets/img/disturbed.png");
-    background-size: cover;
-    background-repeat: no-repeat;
     z-index: 1;
     cursor: pointer;
   }
@@ -986,7 +1060,7 @@ textarea {
     position: relative;
     top: 140px;
     text-align: center;
-    font-size: 16pt;
+    font-size: 14pt;
     letter-spacing: 1.5px;
   }
 
@@ -1060,9 +1134,26 @@ textarea {
 }
 
 @media only screen and (811px <= width <= 1280px) {
+  .wrapper {
+    max-width: 85%;
+    margin: 0 auto;
+  }
+
+  .hamburgerNavigation {
+    display: none;
+  }
+
+  .concertCardContainer {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+  }
+
   .concertCard {
     border-radius: 20px 20px 0 0;
-    max-width: 200px;
+    max-width: 225px;
     width: 100%;
     height: 300px;
     cursor: pointer;
@@ -1073,7 +1164,7 @@ textarea {
     height: 50%;
     background-color: #f7f4f2;
     line-height: 35px;
-    font-size: 11pt;
+    font-size: 10pt;
   }
 
   .artistCard {
@@ -1081,9 +1172,6 @@ textarea {
     width: 100%;
     height: 150px;
     border-radius: 10px;
-    background-image: url("@/assets/img/disturbed.png");
-    background-size: cover;
-    background-repeat: no-repeat;
     z-index: 1;
     cursor: pointer;
   }
@@ -1092,7 +1180,7 @@ textarea {
     position: relative;
     top: 115px;
     text-align: center;
-    font-size: 16pt;
+    font-size: 12pt;
     letter-spacing: 1.5px;
   }
 
@@ -1116,7 +1204,7 @@ textarea {
     padding-top: 28px;
   }
 
-  .widthContentReservation .iconFontSize{
+  .widthContentReservation .iconFontSize {
     font-size: 8pt;
     padding-top: 45px;
   }
@@ -1186,6 +1274,15 @@ textarea {
 }
 
 @media only screen and (413px <= width <= 810px) {
+  .wrapper {
+    max-width: 85%;
+    margin: 0 auto;
+  }
+
+  .hamburgerNavigation {
+    display: none;
+  }
+
   .concertCard {
     border-radius: 10px 10px 0 0;
     max-width: 250px;
@@ -1466,12 +1563,12 @@ textarea {
     padding-top: 48px;
   }
 
-  .widthContentReservation .iconFontSize{
+  .widthContentReservation .iconFontSize {
     font-size: 8pt;
     padding-top: 8px;
   }
 
-  .widthContentReservation .inline{
+  .widthContentReservation .inline {
     display: flex;
     flex-direction: column;
   }
@@ -1625,6 +1722,11 @@ textarea {
 }
 
 @media only screen and (max-width: 412px) {
+  .wrapper {
+    max-width: 85%;
+    margin: 0 auto;
+  }
+
   nav {
     max-width: 412px;
     width: 100%;
@@ -1633,7 +1735,8 @@ textarea {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: unset;
+    position: fixed;
+    top: 50px;
     z-index: 10000;
   }
 
@@ -1828,51 +1931,50 @@ textarea {
     font-size: 9pt;
     padding-top: 10px;
   }
-  
-  .listOfConcerts .row .column .odd.inline{
+
+  .listOfConcerts .row .column .odd.inline {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .listOfConcerts .row .column .even.inline{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .listOfConcerts .row .column .odd .widthContent.inline{
+  .listOfConcerts .row .column .even.inline {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .listOfConcerts .row .column .even .widthContent.inline{
+  .listOfConcerts .row .column .odd .widthContent.inline {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  .listOfConcerts .row .column .odd .widthContent .inline{
+  .listOfConcerts .row .column .even .widthContent.inline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .listOfConcerts .row .column .odd .widthContent .inline {
     display: flex;
     flex-direction: column;
   }
 
-  .listOfConcerts .row .column .even .widthContent .inline{
+  .listOfConcerts .row .column .even .widthContent .inline {
     display: flex;
     flex-direction: column;
   }
 
-  
-  .listOfConcerts .row .column .odd .widthContent .inline.iconFontSize > p{
+  .listOfConcerts .row .column .odd .widthContent .inline.iconFontSize > p {
     line-height: 20px;
   }
 
-  .listOfConcerts .row .column .even .widthContent .inline.iconFontSize > p{
+  .listOfConcerts .row .column .even .widthContent .inline.iconFontSize > p {
     line-height: 20px;
   }
 
-  .shoppingCart{
+  .shoppingCart {
     position: relative;
     bottom: 360px;
     left: 100px;
@@ -1929,7 +2031,7 @@ textarea {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    height: 330px;
+    height: 660px;
   }
 
   .profileInfo {
@@ -1937,8 +2039,31 @@ textarea {
     background-color: #f7f4f2;
     border-radius: 10px;
     display: flex;
+    flex-direction: column;
     gap: 20px;
     align-items: center;
+  }
+
+  .profilePicture {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 250px;
+    background-image: url("/src/assets/img/profilepic.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .socialMediaProfile {
+    display: inline-flex;
+    padding-bottom: 20px;
+  }
+
+  .notFirst {
+    margin: 0 0 0 15px;
+  }
+
+  .verticalLine {
+    display: none;
   }
 
   .notifications {
@@ -2204,5 +2329,18 @@ textarea {
     font-size: 12pt;
     padding-left: 10px;
     color: #0a1733;
+  }
+
+  .hamburgerNavigation {
+    display: block;
+    color: #f7f4f2;
+    font-size: 24pt;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #0a1733;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10000;
   }
 }

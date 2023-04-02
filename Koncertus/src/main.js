@@ -26,6 +26,7 @@ import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 import "@/assets/styles.css";
 library.add(
@@ -49,7 +50,8 @@ library.add(
   faCircleCheck,
   faUser,
   faEnvelope,  
-  faLock,     
+  faLock,
+  faBars,   
 );
 const app = createApp(App);
 

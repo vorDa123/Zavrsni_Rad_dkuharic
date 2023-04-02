@@ -1,64 +1,160 @@
 <template>
-    <div class="wrapper">
-        <h1 class="uppercase">Upcoming concerts</h1>
-        <!-- 
+  <div class="wrapper">
+    <h1 class="uppercase">Upcoming concerts</h1>
+    <!-- 
         For importing icons:
         <font-awesome-icon icon="fa-solid fa-calendar" />
         <font-awesome-icon icon="fa-brands fa-facebook" /> 
       -->
-        <div class="concertCardContainer">
-            <div class="concertCard">
-                <div class="concertCardImage"></div>
-                <div class="concertCardText">
-                    <p class="concertCardTextTitle uppercase">Disturbed</p>
-                    <p><font-awesome-icon icon="fa-solid fa-calendar" class="paddingRightCardIcon" /> 05.02.2023.</p>
-                    <p><font-awesome-icon icon="fa-solid fa-clock" class="paddingRightCardIcon" /> 20:15</p>
-                    <div class="sameLine">
-                        <p><font-awesome-icon icon="fa-solid fa-location-dot" class="paddingRightCardIcon" /> Arena
-                            Zagreb</p>
-                        <p class="alignRight bold">20 EUR</p>
-                    </div>
-                </div>
+      <div class="concertCardContainer">
+        <div
+          class="concertCard flicking-panel"
+          v-for="concert in upcomingConcertsArray"
+          :key="concert.id"
+        >
+          <div
+            class="concertCardImage"
+            :style="backgroundImageStyles(concert)"
+          ></div>
+          <div class="concertCardText">
+            <p class="concertCardTextTitle uppercase">{{ concert.artist }}</p>
+            <p>
+              <font-awesome-icon
+                icon="fa-solid fa-calendar"
+                class="paddingRightCardIcon"
+              />
+              {{ concert.date }}
+            </p>
+            <p>
+              <font-awesome-icon
+                icon="fa-solid fa-clock"
+                class="paddingRightCardIcon"
+              />
+              {{ concert.time }}
+            </p>
+            <div class="sameLine">
+              <p>
+                <font-awesome-icon
+                  icon="fa-solid fa-location-dot"
+                  class="paddingRightCardIcon"
+                />
+                {{ concert.location }}
+              </p>
+              <p class="alignRight bold">{{ concert.price }} EUR</p>
             </div>
-            <div class="concertCard">
-                <div class="concertCardImage"></div>
-                <div class="concertCardText">
-                    <p class="concertCardTextTitle uppercase">Disturbed</p>
-                    <p><font-awesome-icon icon="fa-solid fa-calendar" class="paddingRightCardIcon" /> 05.02.2023.</p>
-                    <p><font-awesome-icon icon="fa-solid fa-clock" class="paddingRightCardIcon" /> 20:15</p>
-                    <div class="sameLine">
-                        <p><font-awesome-icon icon="fa-solid fa-location-dot" class="paddingRightCardIcon" /> Arena
-                            Zagreb</p>
-                        <p class="alignRight bold">20 EUR</p>
-                    </div>
-                </div>
-            </div>            
-            <div class="concertCard">
-                <div class="concertCardImage"></div>
-                <div class="concertCardText">
-                    <p class="concertCardTextTitle uppercase">Disturbed</p>
-                    <p><font-awesome-icon icon="fa-solid fa-calendar" class="paddingRightCardIcon" /> 05.02.2023.</p>
-                    <p><font-awesome-icon icon="fa-solid fa-clock" class="paddingRightCardIcon" /> 20:15</p>
-                    <div class="sameLine">
-                        <p><font-awesome-icon icon="fa-solid fa-location-dot" class="paddingRightCardIcon" /> Arena
-                            Zagreb</p>
-                        <p class="alignRight bold">20 EUR</p>
-                    </div>
-                </div>
-            </div>            
-            <div class="concertCard">
-                <div class="concertCardImage"></div>
-                <div class="concertCardText">
-                    <p class="concertCardTextTitle uppercase">Disturbed</p>
-                    <p><font-awesome-icon icon="fa-solid fa-calendar" class="paddingRightCardIcon" /> 05.02.2023.</p>
-                    <p><font-awesome-icon icon="fa-solid fa-clock" class="paddingRightCardIcon" /> 20:15</p>
-                    <div class="sameLine">
-                        <p><font-awesome-icon icon="fa-solid fa-location-dot" class="paddingRightCardIcon" /> Arena
-                            Zagreb</p>
-                        <p class="alignRight bold">20 EUR</p>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-    </div>
+      </div>
+  </div>
 </template>
+<script>
+import ZZTopImage from "@/assets/img/zztop.png";
+import WhitesnakeImage from "@/assets/img/whitesnake.png";
+import LedZeppelinImage from "@/assets/img/ledzeppelin.png";
+import SabatonImage from "@/assets/img/sabaton.png";
+import LinkinParkImage from "@/assets/img/linkinpark.png";
+import IronMaidenImage from "@/assets/img/ironmaiden.png";
+import PowerwolfImage from "@/assets/img/powerwolf.png";
+import ScorpionsImage from "@/assets/img/scorpions.png";
+import DisturbedImage from "@/assets/img/disturbed.png";
+import DivljeJagodeImage from "@/assets/img/divljejagode.png";
+import HeimlichImage from "@/assets/img/heimlich.png";
+
+import Flicking from "@egjs/vue3-flicking";
+
+export default {
+  components: {
+    Flicking: Flicking,
+  },
+  data() {
+    return {
+      showModal: false,
+      concerts: {},
+      search: "",
+      upcomingConcertsArray: [
+        {
+          id: 1,
+          artist: "zz top",
+          location: "Arena Zagreb",
+          date: "16.11.2023",
+          time: "20:15",
+          price: 250,
+          isrc: ZZTopImage,
+        },
+        {
+          id: 2,
+          artist: "whitesnake",
+          location: "Tvornica Kulture",
+          date: "20.04.2023",
+          time: "21:15",
+          price: 240,
+          isrc: WhitesnakeImage,
+        },
+        {
+          id: 3,
+          artist: "led zeppelin",
+          location: "Spaladium Arena",
+          date: "28.08.2023",
+          time: "19:15",
+          price: 220,
+          isrc: LedZeppelinImage,
+        },
+        {
+          id: 4,
+          artist: "sabaton",
+          location: "Pulska Arena",
+          date: "25.05.2023",
+          time: "22:00",
+          price: 200,
+          isrc: SabatonImage,
+        },{
+          id: 5,
+          artist: "Linkin park",
+          location: "Arena Zagreb",
+          date: "16.11.2023",
+          time: "20:15",
+          price: 250,
+          isrc: LinkinParkImage,
+        },
+        {
+          id: 6,
+          artist: "powerwolf",
+          location: "Tvornica Kulture",
+          date: "20.04.2023",
+          time: "21:15",
+          price: 240,
+          isrc: PowerwolfImage,
+        },
+        {
+          id: 7,
+          artist: "Disturbed",
+          location: "Spaladium Arena",
+          date: "28.08.2023",
+          time: "19:15",
+          price: 220,
+          isrc: DisturbedImage,
+        },
+        {
+          id: 8,
+          artist: "scorpions",
+          location: "Pulska Arena",
+          date: "25.05.2023",
+          time: "22:00",
+          price: 200,
+          isrc: ScorpionsImage,
+        },
+      ],
+    };
+  },
+  computed: {
+    backgroundImageStyles() {
+      return (concert) => ({
+        "background-image": `url("${concert.isrc}")`,
+        "background-repeat": "no-repeat",
+        "background-size": "cover",
+        "background-position": "center",
+      });
+    },
+  },
+};
+</script>
