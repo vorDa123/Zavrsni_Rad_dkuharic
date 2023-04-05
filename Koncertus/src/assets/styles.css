@@ -102,6 +102,7 @@ a {
   width: 100%;
   height: 450px;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .concertCardImage {
@@ -947,6 +948,17 @@ textarea {
 .wrapperFaq {
   width: 50%;
   margin: 0 auto;
+}
+
+.showMoreArrow{
+  transform: rotate(90deg);
+  font-size: 18pt;
+  cursor: pointer;
+}
+
+.showMoreContainer{
+  margin-top: 25px;
+  font-weight: bold;
 }
 
 @media only screen and (1441px <= width <= 1536px) {

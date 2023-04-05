@@ -6,45 +6,45 @@
         <font-awesome-icon icon="fa-solid fa-calendar" />
         <font-awesome-icon icon="fa-brands fa-facebook" /> 
       -->
-      <div class="concertCardContainer">
+    <div class="concertCardContainer" v-for="(row, index) in rows" :key="index">
+      <div class="concertCard" v-for="concert in row" :key="concert.id">
         <div
-          class="concertCard flicking-panel"
-          v-for="concert in upcomingConcertsArray"
-          :key="concert.id"
-        >
-          <div
-            class="concertCardImage"
-            :style="backgroundImageStyles(concert)"
-          ></div>
-          <div class="concertCardText">
-            <p class="concertCardTextTitle uppercase">{{ concert.artist }}</p>
+          class="concertCardImage"
+          :style="backgroundImageStyles(concert)"
+        ></div>
+        <div class="concertCardText">
+          <p class="concertCardTextTitle uppercase">{{ concert.artist }}</p>
+          <p>
+            <font-awesome-icon
+              icon="fa-solid fa-calendar"
+              class="paddingRightCardIcon"
+            />
+            {{ concert.date }}
+          </p>
+          <p>
+            <font-awesome-icon
+              icon="fa-solid fa-clock"
+              class="paddingRightCardIcon"
+            />
+            {{ concert.time }}
+          </p>
+          <div class="sameLine">
             <p>
               <font-awesome-icon
-                icon="fa-solid fa-calendar"
+                icon="fa-solid fa-location-dot"
                 class="paddingRightCardIcon"
               />
-              {{ concert.date }}
+              {{ concert.location }}
             </p>
-            <p>
-              <font-awesome-icon
-                icon="fa-solid fa-clock"
-                class="paddingRightCardIcon"
-              />
-              {{ concert.time }}
-            </p>
-            <div class="sameLine">
-              <p>
-                <font-awesome-icon
-                  icon="fa-solid fa-location-dot"
-                  class="paddingRightCardIcon"
-                />
-                {{ concert.location }}
-              </p>
-              <p class="alignRight bold">{{ concert.price }} EUR</p>
-            </div>
+            <p class="alignRight bold">{{ concert.price }} EUR</p>
           </div>
         </div>
       </div>
+    </div>
+    <div class="alignCenter showMoreContainer" @click="loadMore">
+      <p class="uppercase">SHOW MORE</p>
+      <font-awesome-icon icon="fa-solid fa-arrow-right" class="showMoreArrow" />
+    </div>
   </div>
 </template>
 <script>
@@ -60,17 +60,14 @@ import DisturbedImage from "@/assets/img/disturbed.png";
 import DivljeJagodeImage from "@/assets/img/divljejagode.png";
 import HeimlichImage from "@/assets/img/heimlich.png";
 
-import Flicking from "@egjs/vue3-flicking";
-
 export default {
-  components: {
-    Flicking: Flicking,
-  },
   data() {
     return {
       showModal: false,
       concerts: {},
       search: "",
+      rows: [],
+      initialNumberOfItems: 4,
       upcomingConcertsArray: [
         {
           id: 1,
@@ -107,7 +104,8 @@ export default {
           time: "22:00",
           price: 200,
           isrc: SabatonImage,
-        },{
+        },
+        {
           id: 5,
           artist: "Linkin park",
           location: "Arena Zagreb",
@@ -143,6 +141,15 @@ export default {
           price: 200,
           isrc: ScorpionsImage,
         },
+        {
+          id: 9,
+          artist: "scorpions",
+          location: "Pulska Arena",
+          date: "25.05.2023",
+          time: "22:00",
+          price: 200,
+          isrc: ScorpionsImage,
+        },
       ],
     };
   },
@@ -155,6 +162,19 @@ export default {
         "background-position": "center",
       });
     },
+  },
+  methods: {
+    loadMore() {
+      const currentRowCount = this.rows.length;
+      const nextCards = this.upcomingConcertsArray.slice(
+        currentRowCount * 4,
+        currentRowCount * 4 + 4
+      );
+      this.rows.push(nextCards);
+    },
+  },
+  mounted() {
+    this.loadMore();
   },
 };
 </script>
