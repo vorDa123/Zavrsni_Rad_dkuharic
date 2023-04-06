@@ -3,12 +3,12 @@ import { RouterLink, RouterView } from "vue-router";
 </script>
 <template>
   <font-awesome-icon
-      icon="fa-solid fa-bars"
-      class="hamburgerNavigation"
-      @click="showMenu"
-      v-if="!$route.meta.hideNavbar"
-    />
-  <nav v-if="!$route.meta.hideNavbar" v-show="navVisible">    
+    icon="fa-solid fa-bars"
+    class="hamburgerNavigation"
+    @click="showMenu"
+    v-if="!$route.meta.hideNavbar"
+  />
+  <nav v-if="!$route.meta.hideNavbar" v-show="navVisible">
     <RouterLink to="/concerts" class="middleAlign notLogo">CONCERTS</RouterLink>
     <RouterLink to="/profile" class="middleAlign notLogo"
       >MY PROFILE</RouterLink
@@ -29,9 +29,18 @@ export default {
     };
   },
   methods: {
-    showMenu: function() {
+    showMenu: function () {
       this.navVisible = !this.navVisible;
     },
+  },
+  beforeMount() {
+    if (
+      navigator.userAgent.match(/Android/i) ||
+      navigator.userAgent.match(/webOS/i) ||
+      navigator.userAgent.match(/iPhone/i)
+    ) {
+      this.navVisible = false;
+    }
   },
 };
 </script>

@@ -961,6 +961,53 @@ textarea {
   font-weight: bold;
 }
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1.5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 98;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.modalContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  width: 100%;
+  max-width: 400px;
+  background-color: #f7f4f2;
+  border-radius: 16px;
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.xIconSize{
+  font-size: 18pt;
+  position: absolute;
+  right: 30px;
+  top: 15px;
+  cursor: pointer;
+}
+
+.modalButtonPosition{
+  position: relative;
+  left: 350px;
+}
+
 @media only screen and (1441px <= width <= 1536px) {
   .wrapper {
     max-width: 85%;

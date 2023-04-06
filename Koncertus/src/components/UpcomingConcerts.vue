@@ -1,4 +1,60 @@
 <template>
+  <transition name="fade" appear>
+    <div class="modalOverlay" v-if="showModal" @click="showModal = false"></div>
+  </transition>
+  <transition name="fade" appear>
+    <div class="modalContainer" id="myModal" v-if="showModal">
+      <span @click="showModal = false">
+        <font-awesome-icon icon="fa-solid fa-xmark" class="xIconSize"
+      /></span>
+      <div>
+        <div></div>
+        <div>
+          <h1 class="uppercase">{{ modalArtist }}</h1>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. At mattis
+          commodo aenean congue tempor, mattis neque purus. Libero eu neque
+          faucibus risus mauris amet, mauris. Facilisi urna ipsum commodo in
+          eleifend malesuada pharetra.
+        </p>
+        <br />
+        <p class="bold">Price: {{ modalPrice }} EUR</p>
+        <br />
+        <div>
+          <div>
+            <p>
+              <font-awesome-icon
+                icon="fa-solid fa-calendar"
+                class="paddingRightCardIcon"
+              />
+              {{ modalDate }}
+            </p>
+            <br />
+            <p>
+              <font-awesome-icon
+                icon="fa-solid fa-clock"
+                class="paddingRightCardIcon"
+              />
+              {{ modalTime }}
+            </p>
+            <br />
+            <p>
+              <font-awesome-icon
+                icon="fa-solid fa-location-dot"
+                class="paddingRightCardIcon"
+              />
+              {{ modalLocation }}
+            </p>
+          </div>
+          <br />
+          <button type="button" class="blueButton modalButtonPosition">
+            BUY
+          </button>
+        </div>
+      </div>
+    </div>
+  </transition>
   <div class="wrapper">
     <h1 class="uppercase">Upcoming concerts</h1>
     <!-- 
@@ -7,7 +63,12 @@
         <font-awesome-icon icon="fa-brands fa-facebook" /> 
       -->
     <div class="concertCardContainer" v-for="(row, index) in rows" :key="index">
-      <div class="concertCard" v-for="concert in row" :key="concert.id">
+      <div
+        class="concertCard"
+        v-for="concert in row"
+        :key="concert.id"
+        @click="itemClicked(concert)"
+      >
         <div
           class="concertCardImage"
           :style="backgroundImageStyles(concert)"
@@ -41,7 +102,11 @@
         </div>
       </div>
     </div>
-    <div class="alignCenter showMoreContainer" @click="loadMore">
+    <div
+      class="alignCenter showMoreContainer"
+      @click="loadMore"
+      v-show="showMoreButton"
+    >
       <p class="uppercase">SHOW MORE</p>
       <font-awesome-icon icon="fa-solid fa-arrow-right" class="showMoreArrow" />
     </div>
@@ -64,8 +129,15 @@ export default {
   data() {
     return {
       showModal: false,
+      showMoreButton: true,
       concerts: {},
       search: "",
+      modalArtist: "",
+      modalPrice: 0,
+      modalDate: "",
+      modalLocation: "",
+      modalTime: "",
+      modalImage: "",
       rows: [],
       initialNumberOfItems: 4,
       upcomingConcertsArray: [
@@ -171,6 +243,20 @@ export default {
         currentRowCount * 4 + 4
       );
       this.rows.push(nextCards);
+      if (
+        currentRowCount == Math.round(this.upcomingConcertsArray.length / 4)
+      ) {
+        this.showMoreButton = false;
+      }
+    },
+    itemClicked(item) {
+      this.modalArtist = item.artist;
+      this.modalDate = item.date;
+      this.modalLocation = item.location;
+      this.modalPrice = item.price;
+      this.modalTime = item.time;
+      this.modalImage = item.isrc;
+      this.showModal = true;
     },
   },
   mounted() {
