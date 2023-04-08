@@ -1,22 +1,36 @@
 <template>
   <transition name="fade" appear>
-    <div class="modalOverlay" v-if="showModal" @click="showModal = false"></div>
+    <div
+      class="modalOverlay"
+      v-if="showModal"
+      @click="showModal = false"
+      @wheel.prevent
+      @touchmove.prevent
+      @scroll.prevent
+    ></div>
   </transition>
   <transition name="fade" appear>
-    <div class="modalContainer" id="myModal" v-if="showModal">
+    <div
+      class="modalContainer"
+      id="myModal"
+      v-if="showModal"
+      @wheel.prevent
+      @touchmove.prevent
+      @scroll.prevent
+    >
       <span @click="showModal = false">
         <font-awesome-icon icon="fa-solid fa-xmark" class="xIconSize"
       /></span>
       <div>
-        <div></div>
+        <div
+          :style="modalBackgroundImageStyles(modalImage)"
+          class="modalArtistImage"
+        ></div>
         <div>
           <h1 class="uppercase">{{ modalArtist }}</h1>
         </div>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. At mattis
-          commodo aenean congue tempor, mattis neque purus. Libero eu neque
-          faucibus risus mauris amet, mauris. Facilisi urna ipsum commodo in
-          eleifend malesuada pharetra.
+          {{ modalDescription }}
         </p>
         <br />
         <p class="bold">Price: {{ modalPrice }} EUR</p>
@@ -149,6 +163,8 @@ export default {
           time: "20:15",
           price: 250,
           isrc: ZZTopImage,
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At mattis commodo aenean congue tempor, mattis neque purus. Libero eu neque faucibus risus mauris amet, mauris. Facilisi urna ipsum commodo in eleifend malesuada pharetra.",
         },
         {
           id: 2,
@@ -158,6 +174,8 @@ export default {
           time: "21:15",
           price: 240,
           isrc: WhitesnakeImage,
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At mattis commodo aenean congue tempor, mattis neque purus. Libero eu neque faucibus risus mauris amet, mauris. Facilisi urna ipsum commodo in eleifend malesuada pharetra.",
         },
         {
           id: 3,
@@ -167,6 +185,8 @@ export default {
           time: "19:15",
           price: 220,
           isrc: LedZeppelinImage,
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At mattis commodo aenean congue tempor, mattis neque purus. Libero eu neque faucibus risus mauris amet, mauris. Facilisi urna ipsum commodo in eleifend malesuada pharetra.",
         },
         {
           id: 4,
@@ -176,6 +196,8 @@ export default {
           time: "22:00",
           price: 200,
           isrc: SabatonImage,
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At mattis commodo aenean congue tempor, mattis neque purus. Libero eu neque faucibus risus mauris amet, mauris. Facilisi urna ipsum commodo in eleifend malesuada pharetra.",
         },
         {
           id: 5,
@@ -185,6 +207,8 @@ export default {
           time: "20:15",
           price: 250,
           isrc: LinkinParkImage,
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At mattis commodo aenean congue tempor, mattis neque purus. Libero eu neque faucibus risus mauris amet, mauris. Facilisi urna ipsum commodo in eleifend malesuada pharetra.",
         },
         {
           id: 6,
@@ -194,6 +218,8 @@ export default {
           time: "21:15",
           price: 240,
           isrc: PowerwolfImage,
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At mattis commodo aenean congue tempor, mattis neque purus. Libero eu neque faucibus risus mauris amet, mauris. Facilisi urna ipsum commodo in eleifend malesuada pharetra.",
         },
         {
           id: 7,
@@ -203,6 +229,8 @@ export default {
           time: "19:15",
           price: 220,
           isrc: DisturbedImage,
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At mattis commodo aenean congue tempor, mattis neque purus. Libero eu neque faucibus risus mauris amet, mauris. Facilisi urna ipsum commodo in eleifend malesuada pharetra.",
         },
         {
           id: 8,
@@ -212,6 +240,8 @@ export default {
           time: "22:00",
           price: 200,
           isrc: ScorpionsImage,
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At mattis commodo aenean congue tempor, mattis neque purus. Libero eu neque faucibus risus mauris amet, mauris. Facilisi urna ipsum commodo in eleifend malesuada pharetra.",
         },
         {
           id: 9,
@@ -221,6 +251,8 @@ export default {
           time: "22:00",
           price: 200,
           isrc: ScorpionsImage,
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At mattis commodo aenean congue tempor, mattis neque purus. Libero eu neque faucibus risus mauris amet, mauris. Facilisi urna ipsum commodo in eleifend malesuada pharetra.",
         },
       ],
     };
@@ -229,6 +261,14 @@ export default {
     backgroundImageStyles() {
       return (concert) => ({
         "background-image": `url("${concert.isrc}")`,
+        "background-repeat": "no-repeat",
+        "background-size": "cover",
+        "background-position": "center",
+      });
+    },
+    modalBackgroundImageStyles() {
+      return (bgimage) => ({
+        "background-image": `url("${bgimage}")`,
         "background-repeat": "no-repeat",
         "background-size": "cover",
         "background-position": "center",
@@ -256,6 +296,7 @@ export default {
       this.modalPrice = item.price;
       this.modalTime = item.time;
       this.modalImage = item.isrc;
+      this.modalDescription = item.description;
       this.showModal = true;
     },
   },

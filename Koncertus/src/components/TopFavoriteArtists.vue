@@ -72,8 +72,8 @@ export default {
         },
         {
           id: 6,
-          artist: "heimlich",
-          isrc: HeimlichImage,
+          artist: "divlje jagode",
+          isrc: DivljeJagodeImage,
         },
       ],      
       favoriteArtistArray: [

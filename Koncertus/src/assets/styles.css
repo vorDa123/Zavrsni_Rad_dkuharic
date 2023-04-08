@@ -103,6 +103,7 @@ a {
   height: 450px;
   cursor: pointer;
   margin-bottom: 20px;
+  box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.2);
 }
 
 .concertCardImage {
@@ -800,14 +801,14 @@ a {
   width: 30%;
   background-color: #f7f4f2;
   border-radius: 10px;
-  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .myReservations {
   width: 70%;
   background-color: #f7f4f2;
-  border-radius: 10px;
-  overflow: hidden;
+  border-radius: 10px;  
+  overflow-y: scroll;
 }
 
 .artistProfile {
@@ -1006,6 +1007,13 @@ textarea {
 .modalButtonPosition{
   position: relative;
   left: 350px;
+}
+
+.modalArtistImage{
+  width: 100%;
+  height: 250px;
+  margin-top: 20px;
+  border-radius: 5px;
 }
 
 @media only screen and (1441px <= width <= 1536px) {
@@ -1329,6 +1337,20 @@ textarea {
   .shoppingCart {
     font-size: 15pt;
     padding-right: 10px;
+  }  
+  
+  .modalContainer {
+    position: fixed;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    width: 100%;
+    max-width: 400px;
+    background-color: #f7f4f2;
+    border-radius: 16px;
+    padding: 25px;
+    transition: all 0.3s ease;
   }
 }
 
@@ -1371,6 +1393,7 @@ textarea {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
     overflow: hidden;
   }
@@ -1777,6 +1800,20 @@ textarea {
     font-size: 12pt;
     padding-left: 10px;
     color: #0a1733;
+  }
+  
+  .modalContainer {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    z-index: 99;
+    width: 100%;
+    max-width: 400px;
+    background-color: #f7f4f2;
+    border-radius: 16px;
+    padding: 25px;
+    transition: all 0.3s ease;
   }
 }
 
@@ -2401,5 +2438,24 @@ textarea {
     position: fixed;
     top: 0;
     z-index: 10000;
+  }
+
+  .modalContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    width: 100%;
+    max-width: 300px;
+    background-color: #f7f4f2;
+    border-radius: 16px;
+    padding: 25px;
+    transition: all 0.3s ease;
+  }
+
+  .modalButtonPosition{
+    position: relative;
+    left: 250px;
   }
 }
