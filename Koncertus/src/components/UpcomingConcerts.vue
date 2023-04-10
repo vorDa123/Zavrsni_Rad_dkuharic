@@ -36,7 +36,7 @@
         <p class="bold">Price: {{ modalPrice }} EUR</p>
         <br />
         <div>
-          <div>
+          <div class="sameLineCustom">
             <p>
               <font-awesome-icon
                 icon="fa-solid fa-calendar"
@@ -144,8 +144,6 @@ export default {
     return {
       showModal: false,
       showMoreButton: true,
-      concerts: {},
-      search: "",
       modalArtist: "",
       modalPrice: 0,
       modalDate: "",
