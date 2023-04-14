@@ -522,14 +522,13 @@ a {
 }
 
 .nowPlaying {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 3, 10, 0.6);
   color: #f7f4f2;
-  z-index: -6 !important;
 }
 
 .sameLinePlayButton{
@@ -603,22 +602,8 @@ a {
 .backgroundImagePlayer {
   width: 100%;
   height: 100%;
-  background-image: url("@/assets/img/disturbed.png");
-  background-size: cover;
-  background-repeat: no-repeat;
   position: relative;
   z-index: -7 !important;
-}
-
-.playerContent {
-  width: 100%;
-  max-height: 175px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(8, 20, 63, 0.8);
-  opacity: 1;
-  z-index: -5 !important;
 }
 
 .playerContentText {
@@ -686,24 +671,6 @@ a {
 
 .volumeSliderContainer {
   padding-top: 5px;
-}
-
-.slider::-webkit-slider-runnable-track {
-  width: 100%;
-  height: 5px;
-  cursor: pointer;
-  background: #faf7f9;
-  border-radius: 5px;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 18px;
-  height: 18px;
-  border-radius: 25px;
-  margin: -5px;
-  background: #f7f4f2;
 }
 
 .playNext {

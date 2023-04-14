@@ -46,93 +46,93 @@
         v-for="song in topTenSongs.slice(0, 1)"
         :key="song.src"
       >
-        <div
-          class="backgroundImagePlayer"
-          :style="backgroundImageStyles(song)"
-        >
-          <div class="nowPlaying">
-            <div class="playerContentText">
-              <div class="artistSong">
-                <p class="uppercase bold playerArtist">{{ current.artist }}</p>
-                <p class="playerSong">{{ current.title }}</p>
+        <div class="nowPlaying" :style="backgroundImageStyles(current)">
+          <div class="playerContentText">
+            <div class="artistSong">
+              <p class="uppercase bold playerArtist">{{ current.artist }}</p>
+              <p class="playerSong">{{ current.title }}</p>
+            </div>
+            <br />
+            <div class="sliders">
+              <div class="slideContainer">
+                <font-awesome-icon
+                  icon="fa-solid fa-play"
+                  class="paddingRightCardIcon positionSlider"
+                  v-if="!isPlaying"
+                  @click="play"
+                />
+                <font-awesome-icon
+                  icon="fa-solid fa-pause"
+                  class="paddingRightCardIcon positionSlider"
+                  v-else
+                  @click="pause"
+                /><input
+                  type="range"
+                  min="1"
+                  max="100"
+                  value="0"
+                  class="slider durationSlider"
+                  id="timeSong"
+                />
+                <span @timeupdate="">{{ durationPrint }}</span>
               </div>
-              <br />
-              <div class="sliders">
-                <div class="slideContainer">
-                  <font-awesome-icon
-                    icon="fa-solid fa-play"
-                    class="paddingRightCardIcon positionSlider"
-                    v-if="!isPlaying"
-                    @click="play()"
-                  />
-                  <font-awesome-icon
-                    icon="fa-solid fa-pause"
-                    class="paddingRightCardIcon positionSlider"
-                    v-else
-                    @click="pause()"
-                  /><input
-                    type="range"
-                    min="1"
-                    max="100"
-                    value="0"
-                    class="slider durationSlider"
-                    id="myRange timeSong"
-                  />
-                  <span>4:15</span>
-                </div>
-                <div class="slideContainer volumeSliderContainer">
-                  <font-awesome-icon
-                    icon="fa-solid fa-volume-high"
-                    class="paddingRightCardIcon positionSlider"
-                  /><input
-                    type="range"
-                    min="1"
-                    max="100"
-                    class="slider"
-                    id="myRange volumeslider"
-                    @mousemove="volume()"
-                    v-model="volumeVal"
-                  />
-                </div>
+              <div class="slideContainer volumeSliderContainer">
+                <font-awesome-icon
+                  icon="fa-solid fa-volume-high"
+                  class="paddingRightCardIcon positionSlider"
+                /><input
+                  type="range"
+                  min="1"
+                  max="100"
+                  class="slider"
+                  id="volumeslider"
+                  @mousemove="volume"
+                  v-model="volumeVal"
+                />
               </div>
             </div>
-            <div class="playerButtons">
-              <button class="playerButtonStyle">
-                <font-awesome-icon
-                  icon="fa-solid fa-share-nodes"
-                  class="paddingRightCardIcon"
-                />Share
-              </button>
-              <button
-                class="playerButtonStyle"
-                v-if="!isLoop"
-                @click="repeatStart()"
-              >
-                <font-awesome-icon
-                  icon="fa-solid fa-repeat"
-                  class="paddingRightCardIcon"
-                />Repeat
-              </button>
-              <button class="playerButtonStyle" v-else @click="repeatStop()">
-                <font-awesome-icon
-                  icon="fa-solid fa-repeat"
-                  class="paddingRightCardIcon"
-                />Stop repeat
-              </button>
-              <button class="playerButtonStyle">
-                <font-awesome-icon
-                  icon="fa-solid fa-forward"
-                  id="previousIcon"
-                />Previous
-              </button>
-              <button class="playerButtonStyle" @click="next()">
-                <font-awesome-icon
-                  icon="fa-solid fa-forward"
-                  class="paddingRightCardIcon"
-                />Next
-              </button>
-            </div>
-            <div class="playerContent" />
+          </div>
+          <div class="playerButtons">
+            <button type="button" class="playerButtonStyle">
+              <font-awesome-icon
+                icon="fa-solid fa-share-nodes"
+                class="paddingRightCardIcon"
+              />Share
+            </button>
+            <button
+              type="button"
+              class="playerButtonStyle"
+              v-if="!isLoop"
+              @click="repeatStart"
+            >
+              <font-awesome-icon
+                icon="fa-solid fa-repeat"
+                class="paddingRightCardIcon"
+              />Repeat
+            </button>
+            <button
+              type="button"
+              class="playerButtonStyle"
+              v-else
+              @click="repeatStop"
+            >
+              <font-awesome-icon
+                icon="fa-solid fa-repeat"
+                class="paddingRightCardIcon"
+              />Stop repeat
+            </button>
+            <button type="button" class="playerButtonStyle" @click="previous">
+              <font-awesome-icon
+                icon="fa-solid fa-forward"
+                id="previousIcon"
+              />Previous
+            </button>
+            <button type="button" class="playerButtonStyle" @click="next">
+              <font-awesome-icon
+                icon="fa-solid fa-forward"
+                class="paddingRightCardIcon"
+              />Next
+            </button>
           </div>
         </div>
       </div>
@@ -172,11 +172,13 @@ export default {
       currentNumberOfRows: 0,
       current: {},
       index: 0,
+      time: 0,
       isPlaying: false,
       showModal: false,
       isLoop: false,
       volumeID: "#volumeslider",
       volumeVal: 50,
+      audioElement: null,
       topTenSongs: [
         {
           id: "01",
@@ -194,7 +196,7 @@ export default {
           isrc: DisturbedImage,
           src: DisturbedWhatAreYouWaitingFor,
           album: "album1",
-          duration: "4:01",
+          duration: "4:02",
         },
         {
           id: "03",
@@ -203,7 +205,7 @@ export default {
           isrc: DisturbedImage,
           src: DisturbedWhoTaughtYouHowToHate,
           album: "album1",
-          duration: "4:01",
+          duration: "4:03",
         },
         {
           id: "04",
@@ -212,7 +214,7 @@ export default {
           isrc: DivljeJagodeImage,
           src: DivljeJagodeKapPoKap,
           album: "album1",
-          duration: "4:01",
+          duration: "4:04",
         },
         {
           id: "05",
@@ -221,7 +223,7 @@ export default {
           isrc: HeimlichImage,
           src: HeimlichFtJermaineFleurASong,
           album: "album1",
-          duration: "4:01",
+          duration: "4:05",
         },
         {
           id: "06",
@@ -230,7 +232,7 @@ export default {
           isrc: IronMaidenImage,
           src: IronMaidenRainmaker,
           album: "album1",
-          duration: "4:01",
+          duration: "4:06",
         },
         {
           id: "07",
@@ -239,7 +241,7 @@ export default {
           isrc: LinkinParkImage,
           src: LinkinParkPushingMeAway,
           album: "album1",
-          duration: "4:01",
+          duration: "4:07",
         },
         {
           id: "08",
@@ -248,7 +250,7 @@ export default {
           isrc: LinkinParkImage,
           src: LinkinParkTalkingToMyself,
           album: "album1",
-          duration: "4:01",
+          duration: "4:08",
         },
         {
           id: "09",
@@ -257,7 +259,7 @@ export default {
           isrc: PowerwolfImage,
           src: PowerwolfArmataStrigoi,
           album: "album1",
-          duration: "4:01",
+          duration: "4:09",
         },
         {
           id: "10",
@@ -266,7 +268,7 @@ export default {
           isrc: ScorpionsImage,
           src: ScorpionsNoOneLikeYou,
           album: "album1",
-          duration: "4:01",
+          duration: "4:10",
         },
       ],
       player: new Audio(),
@@ -279,7 +281,12 @@ export default {
         "background-repeat": "no-repeat",
         "background-size": "cover",
         "background-position": "center",
+        "background-blend-mode": "multiply",
       });
+    },    
+    durationPrint(){
+      if (this.audioElement || !this.duration) return '0:00';
+      return parseInt(this.audioElement.duration / 60) + ':' + parseInt(this.audioElement.duration % 60);
     },
   },
   methods: {
@@ -290,6 +297,17 @@ export default {
       }
       this.player.play();
       this.isPlaying = true;
+
+      this.audioElement = this.player;
+      this.audioElement.ontimeupdate = this.updateTime;
+      var timeChange = this;
+      this.audioElement.addEventListener('durationchange', function(){
+        timeChange.duration = timeChange.audioElement.duration;
+      })
+    },
+    updateTime(){
+      if (!this.audioElement || !this.audioElement.currentTime) return this.time = 0;
+      this.time = (this.audioElement.currentTime / this.audioElement.duration) * 100;
     },
     pause() {
       this.player.pause();
@@ -299,6 +317,15 @@ export default {
       this.index++;
       if (this.index > this.topTenSongs.length - 1) {
         this.index = 0;
+      }
+      this.current = this.topTenSongs[this.index];
+      this.play(this.current);
+    },
+    previous() {
+      if (this.index == 0) {
+        this.index = this.topTenSongs.length - 1;
+      } else {
+        this.index--;
       }
       this.current = this.topTenSongs[this.index];
       this.play(this.current);
