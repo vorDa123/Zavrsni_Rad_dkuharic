@@ -69,12 +69,16 @@
                 /><input
                   type="range"
                   min="1"
-                  max="100"
-                  value="0"
                   class="slider durationSlider"
                   id="timeSong"
+                  v-model="playbackTime"
+                  :max="audioDuration"
                 />
-                <span @timeupdate="">{{ durationPrint }}</span>
+                <div>
+                  <span v-html="elapsedTime()"></span>
+                  <span> / </span>
+                  <span v-html="totalTime()"></span>
+                </div>
               </div>
               <div class="slideContainer volumeSliderContainer">
                 <font-awesome-icon
@@ -178,7 +182,9 @@ export default {
       isLoop: false,
       volumeID: "#volumeslider",
       volumeVal: 50,
-      audioElement: null,
+      playbackTime: 0,
+      audioDuration: 100,
+      audioLoaded: false,
       topTenSongs: [
         {
           id: "01",
@@ -283,10 +289,6 @@ export default {
         "background-position": "center",
         "background-blend-mode": "multiply",
       });
-    },    
-    durationPrint(){
-      if (this.audioElement || !this.duration) return '0:00';
-      return parseInt(this.audioElement.duration / 60) + ':' + parseInt(this.audioElement.duration % 60);
     },
   },
   methods: {
@@ -297,17 +299,6 @@ export default {
       }
       this.player.play();
       this.isPlaying = true;
-
-      this.audioElement = this.player;
-      this.audioElement.ontimeupdate = this.updateTime;
-      var timeChange = this;
-      this.audioElement.addEventListener('durationchange', function(){
-        timeChange.duration = timeChange.audioElement.duration;
-      })
-    },
-    updateTime(){
-      if (!this.audioElement || !this.audioElement.currentTime) return this.time = 0;
-      this.time = (this.audioElement.currentTime / this.audioElement.duration) * 100;
     },
     pause() {
       this.player.pause();
@@ -341,10 +332,112 @@ export default {
     volume() {
       this.player.volume = this.volumeVal / 100;
     },
+    initSlider() {
+      var audio = this.player;
+      if (audio) {
+        this.audioDuration = Math.round(audio.duration);
+      }
+    },
+    convertTime(seconds) {
+      const format = (val) => `0${Math.floor(val)}`.slice(-2);
+      var hours = seconds / 3600;
+      var minutes = (seconds % 3600) / 60;
+      return [minutes, seconds % 60].map(format).join(":");
+    },
+    totalTime() {
+      var audio = this.player;
+      if (audio) {
+        var seconds = audio.duration;
+        return this.convertTime(seconds);
+      } else {
+        return "00:00";
+      }
+    },
+    elapsedTime() {
+      var audio = this.player;
+      if (audio) {
+        var seconds = audio.currentTime;
+        return this.convertTime(seconds);
+      } else {
+        return "00:00";
+      }
+    },
+    playbackListener(e) {
+      var audio = this.player;
+      //Sync local 'playbackTime' var to audio.currentTime and update global state
+      this.playbackTime = audio.currentTime;
+
+      //Add listeners for audio pause and audio end events
+      audio.addEventListener("ended", this.endListener);
+      audio.addEventListener("pause", this.pauseListener);
+    },
+    //Function to run when audio is paused by user
+    pauseListener() {
+      this.isPlaying = false;
+      this.listenerActive = false;
+      this.cleanupListeners();
+    },
+    //Function to run when audio play reaches the end of file
+    endListener() {
+      this.isPlaying = false;
+      this.listenerActive = false;
+      this.cleanupListeners();
+    },
+    //Remove listeners after audio play stops
+    cleanupListeners() {
+      var audio = this.player;
+      audio.removeEventListener("timeupdate", this.playbackListener);
+      audio.removeEventListener("ended", this.endListener);
+      audio.removeEventListener("pause", this.pauseListener);
+    },
   },
   created() {
     this.current = this.topTenSongs[this.index];
     this.player.src = this.current.src;
+  },
+  mounted() {
+    // nextTick code will run only after the entire view has been rendered
+    this.$nextTick(function () {
+      var audio = this.player;
+      //Wait for audio to load, then run initSlider() to get audio duration and set the max value of our slider
+      // "loademetadata" Event https://www.w3schools.com/tags/av_event_loadedmetadata.asp
+      audio.addEventListener(
+        "loadedmetadata",
+        function (e) {
+          this.initSlider();
+        }.bind(this)
+      );
+      // "canplay" HTML Event lets us know audio is ready for play https://www.w3schools.com/tags/av_event_canplay.asp
+      audio.addEventListener(
+        "canplay",
+        function (e) {
+          this.audioLoaded = true;
+        }.bind(this)
+      );
+      //Wait for audio to begin play, then start playback listener function
+      this.$watch("isPlaying", function () {
+        if (this.isPlaying) {
+          var audio = this.player;
+          this.initSlider();
+          //prevent starting multiple listeners at the same time
+          if (!this.listenerActive) {
+            this.listenerActive = true;
+            //for a more consistent timeupdate, include freqtimeupdate.js and replace both instances of 'timeupdate' with 'freqtimeupdate'
+            audio.addEventListener("timeupdate", this.playbackListener);
+          }
+        }
+      });
+      //Update current audio position when user drags progress slider
+      this.$watch("playbackTime", function () {
+        var audio = this.player;
+        var diff = Math.abs(this.playbackTime - audio.currentTime);
+
+        //Throttle synchronization to prevent infinite loop between playback listener and this watcher
+        if (diff > 0.01) {
+          audio.currentTime = this.playbackTime;
+        }
+      });
+    });
   },
 };
 </script>

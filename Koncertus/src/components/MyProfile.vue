@@ -45,30 +45,37 @@
       </div>
       <div class="notifications">
         <p class="uppercase bold nextConcertTitle">Next concerts</p>
-        <div class="nextConcertProfile">
-          <div class="nextConcertImage" />
+        <div
+          class="nextConcertProfile"
+          v-for="nextConcert in nextConcertArray.slice(0, 1)"
+          :key="nextConcert.id"
+        >
+          <div
+            class="nextConcertImage"
+            :style="backgroundImageStyles(current)"
+          />
           <div class="nextConcertContent">
-            <h3 class="uppercase bold">Disturbed</h3>
+            <h3 class="uppercase bold">{{ current.artist }}</h3>
             <p class="marginTopNextConcerts">
               <font-awesome-icon
                 icon="fa-solid fa-calendar"
                 class="paddingRightCardIcon"
               />
-              05.02.2023.
+              {{ current.date }}
             </p>
             <p class="marginTopNextConcerts">
               <font-awesome-icon
                 icon="fa-solid fa-clock"
                 class="paddingRightCardIcon"
               />
-              20:15
+              {{ current.time }}
             </p>
             <p class="marginTopNextConcerts">
               <font-awesome-icon
                 icon="fa-solid fa-location-dot"
                 class="paddingRightCardIcon"
               />
-              Arena Zagreb
+              {{ current.location }}
             </p>
           </div>
         </div>
@@ -77,33 +84,16 @@
     <div class="topFiveAndReservations">
       <div class="topFive">
         <h2 class="uppercase favoriteTitle">Favorite artists</h2>
-        <div class="artistProfile">
-          <div class="artistImageProfile" />
-          <p class="uppercase artistName">Disturbed</p>
-        </div>
-        <div class="artistProfile">
-          <div class="artistImageProfile" />
-          <p class="uppercase artistName">Disturbed</p>
-        </div>
-        <div class="artistProfile">
-          <div class="artistImageProfile" />
-          <p class="uppercase artistName">Disturbed</p>
-        </div>
-        <div class="artistProfile">
-          <div class="artistImageProfile" />
-          <p class="uppercase artistName">Disturbed</p>
-        </div>
-        <div class="artistProfile">
-          <div class="artistImageProfile" />
-          <p class="uppercase artistName">Disturbed</p>
-        </div>
-        <div class="artistProfile">
-          <div class="artistImageProfile" />
-          <p class="uppercase artistName">Disturbed</p>
-        </div>
-        <div class="artistProfile">
-          <div class="artistImageProfile" />
-          <p class="uppercase artistName">Disturbed</p>
+        <div
+          class="artistProfile"
+          v-for="favoriteArtist in favoriteArtistArray"
+          :key="favoriteArtist.id"
+        >
+          <div
+            class="artistImageProfile"
+            :style="backgroundImageStyles(favoriteArtist)"
+          />
+          <p class="uppercase artistName">{{ favoriteArtist.artist }}</p>
         </div>
       </div>
       <div class="myReservations">
@@ -118,167 +108,56 @@
               type="search"
               name="searchReservation"
               class="searchbar"
-              placeholder="Search concerts, artist,..."
+              placeholder="Search artist"
+              v-model="search"
             />
           </div>
         </div>
-        <div class="reservationContainer inline">
-          <div class="paddingIcons paddingTopDateReservation">
-            <p class="bold">16</p>
-            <p class="bold">NOV</p>
-          </div>
-          <div
-            class="inline paddingIcons paddingTopContent widthContentReservation"
-          >
-            <div class="concertImageReservation" />
-            <div class="paddingIcons">
-              <p class="bold">DISTURBED</p>
-              <p class="descriptionFontSize">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                sed enim eu leo dignissim elementum ut a urna.
+        <div v-for="reservation in filteredConcerts" :key="reservation.index">
+          <div class="reservationContainer inline">
+            <div class="paddingIcons paddingTopDateReservation">
+              <p class="bold">{{ substringDateNumber(reservation) }}</p>
+              <p class="bold uppercase">
+                {{ substringMonthName(reservation) }}
               </p>
-              <div class="inline iconFontSize iconPaddingReservation">
-                <p>
-                  <font-awesome-icon icon="fa-solid fa-calendar" />
-                  16.11.2023.
+            </div>
+            <div
+              class="inline paddingIcons paddingTopContent widthContentReservation"
+            >
+              <div
+                class="concertImageReservation"
+                :style="backgroundImageStyles(reservation)"
+              />
+              <div class="paddingIcons">
+                <p class="bold uppercase">{{ reservation.artist }}</p>
+                <p class="descriptionFontSize">
+                  {{ reservation.description }}
                 </p>
-                <p>
-                  <font-awesome-icon
-                    icon="fa-solid fa-clock"
-                    class="paddingIcons removePaddingLeft"
-                  />21:45
-                </p>
-                <p>
-                  <font-awesome-icon
-                    icon="fa-solid fa-location-dot"
-                    class="paddingIcons removePaddingLeft"
-                  />Arena Zagreb
-                </p>
-                <p class="paddingIcons removePaddingLeft">Price: 100 EUR</p>
+                <div class="inline iconFontSize iconPaddingReservation">
+                  <p>
+                    <font-awesome-icon icon="fa-solid fa-calendar" />
+                    {{ reservation.date }}
+                  </p>
+                  <p>
+                    <font-awesome-icon
+                      icon="fa-solid fa-clock"
+                      class="paddingIcons removePaddingLeft"
+                    />{{ reservation.time }}
+                  </p>
+                  <p>
+                    <font-awesome-icon
+                      icon="fa-solid fa-location-dot"
+                      class="paddingIcons removePaddingLeft"
+                    />{{ reservation.location }}
+                  </p>
+                  <p class="paddingIcons removePaddingLeft">
+                    Price: {{ reservation.price }} EUR
+                  </p>
+                </div>
               </div>
-            </div>
-            <div class="buttonPositionReservation">
-              <button class="blueButton">BUY</button>
-            </div>
-          </div>
-        </div>        
-        <div class="reservationContainer inline">
-          <div class="paddingIcons paddingTopDateReservation">
-            <p class="bold">16</p>
-            <p class="bold">NOV</p>
-          </div>
-          <div
-            class="inline paddingIcons paddingTopContent widthContentReservation"
-          >
-            <div class="concertImageReservation" />
-            <div class="paddingIcons">
-              <p class="bold">DISTURBED</p>
-              <p class="descriptionFontSize">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                sed enim eu leo dignissim elementum ut a urna.
-              </p>
-              <div class="inline iconFontSize iconPaddingReservation">
-                <p>
-                  <font-awesome-icon icon="fa-solid fa-calendar" />
-                  16.11.2023.
-                </p>
-                <p>
-                  <font-awesome-icon
-                    icon="fa-solid fa-clock"
-                    class="paddingIcons removePaddingLeft"
-                  />21:45
-                </p>
-                <p>
-                  <font-awesome-icon
-                    icon="fa-solid fa-location-dot"
-                    class="paddingIcons removePaddingLeft"
-                  />Arena Zagreb
-                </p>
-                <p class="paddingIcons removePaddingLeft">Price: 100 EUR</p>
+              <div class="buttonPositionReservation">
+                <button class="blueButton">BUY</button>
               </div>
-            </div>
-            <div class="buttonPositionReservation">
-              <button class="blueButton">BUY</button>
-            </div>
-          </div>
-        </div>        
-        <div class="reservationContainer inline">
-          <div class="paddingIcons paddingTopDateReservation">
-            <p class="bold">16</p>
-            <p class="bold">NOV</p>
-          </div>
-          <div
-            class="inline paddingIcons paddingTopContent widthContentReservation"
-          >
-            <div class="concertImageReservation" />
-            <div class="paddingIcons">
-              <p class="bold">DISTURBED</p>
-              <p class="descriptionFontSize">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                sed enim eu leo dignissim elementum ut a urna.
-              </p>
-              <div class="inline iconFontSize iconPaddingReservation">
-                <p>
-                  <font-awesome-icon icon="fa-solid fa-calendar" />
-                  16.11.2023.
-                </p>
-                <p>
-                  <font-awesome-icon
-                    icon="fa-solid fa-clock"
-                    class="paddingIcons removePaddingLeft"
-                  />21:45
-                </p>
-                <p>
-                  <font-awesome-icon
-                    icon="fa-solid fa-location-dot"
-                    class="paddingIcons removePaddingLeft"
-                  />Arena Zagreb
-                </p>
-                <p class="paddingIcons removePaddingLeft">Price: 100 EUR</p>
-              </div>
-            </div>
-            <div class="buttonPositionReservation">
-              <button class="blueButton">BUY</button>
-            </div>
-          </div>
-        </div>        
-        <div class="reservationContainer inline">
-          <div class="paddingIcons paddingTopDateReservation">
-            <p class="bold">16</p>
-            <p class="bold">NOV</p>
-          </div>
-          <div
-            class="inline paddingIcons paddingTopContent widthContentReservation"
-          >
-            <div class="concertImageReservation" />
-            <div class="paddingIcons">
-              <p class="bold">DISTURBED</p>
-              <p class="descriptionFontSize">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                sed enim eu leo dignissim elementum ut a urna.
-              </p>
-              <div class="inline iconFontSize iconPaddingReservation">
-                <p>
-                  <font-awesome-icon icon="fa-solid fa-calendar" />
-                  16.11.2023.
-                </p>
-                <p>
-                  <font-awesome-icon
-                    icon="fa-solid fa-clock"
-                    class="paddingIcons removePaddingLeft"
-                  />21:45
-                </p>
-                <p>
-                  <font-awesome-icon
-                    icon="fa-solid fa-location-dot"
-                    class="paddingIcons removePaddingLeft"
-                  />Arena Zagreb
-                </p>
-                <p class="paddingIcons removePaddingLeft">Price: 100 EUR</p>
-              </div>
-            </div>
-            <div class="buttonPositionReservation">
-              <button class="blueButton">BUY</button>
             </div>
           </div>
         </div>
@@ -287,3 +166,217 @@
   </div>
   <br />
 </template>
+<script>
+import ZZTopImage from "@/assets/img/zztop.png";
+import WhitesnakeImage from "@/assets/img/whitesnake.png";
+import LedZeppelinImage from "@/assets/img/ledzeppelin.png";
+import SabatonImage from "@/assets/img/sabaton.png";
+import LinkinParkImage from "@/assets/img/linkinpark.png";
+import IronMaidenImage from "@/assets/img/ironmaiden.png";
+import PowerwolfImage from "@/assets/img/powerwolf.png";
+import ScorpionsImage from "@/assets/img/scorpions.png";
+import DisturbedImage from "@/assets/img/disturbed.png";
+import DivljeJagodeImage from "@/assets/img/divljejagode.png";
+import HeimlichImage from "@/assets/img/heimlich.png";
+
+export default {
+  data() {
+    return {
+      showModal: false,
+      search: "",
+      index: 0,
+      current: {},
+      myReservationsArray: [
+        {
+          id: 1,
+          artist: "zz top",
+          location: "Arena Zagreb",
+          date: "16.11.2023",
+          time: "20:15",
+          price: 250,
+          isrc: ZZTopImage,
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed enim eu leo dignissim elementum ut a urna.",
+        },
+        {
+          id: 2,
+          artist: "whitesnake",
+          location: "Tvornica Kulture",
+          date: "20.04.2023",
+          time: "21:15",
+          price: 240,
+          isrc: WhitesnakeImage,
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed enim eu leo dignissim elementum ut a urna.",
+        },
+        {
+          id: 3,
+          artist: "led zeppelin",
+          location: "Spaladium Arena",
+          date: "28.08.2023",
+          time: "19:15",
+          price: 220,
+          isrc: LedZeppelinImage,
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed enim eu leo dignissim elementum ut a urna.",
+        },
+        {
+          id: 4,
+          artist: "sabaton",
+          location: "Pulska Arena",
+          date: "25.05.2023",
+          time: "22:00",
+          price: 200,
+          isrc: SabatonImage,
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed enim eu leo dignissim elementum ut a urna.",
+        },
+        {
+          id: 5,
+          artist: "linkin park",
+          location: "Arena Zagreb",
+          date: "16.11.2023",
+          time: "20:15",
+          price: 250,
+          isrc: LinkinParkImage,
+          description:
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sed enim eu leo dignissim elementum ut a urna.",
+        },
+      ],
+      favoriteArtistArray: [
+        {
+          id: 1,
+          artist: "zz top",
+          isrc: ZZTopImage,
+        },
+        {
+          id: 2,
+          artist: "whitesnake",
+          isrc: WhitesnakeImage,
+        },
+        {
+          id: 3,
+          artist: "led zeppelin",
+          isrc: LedZeppelinImage,
+        },
+        {
+          id: 4,
+          artist: "sabaton",
+          isrc: SabatonImage,
+        },
+        {
+          id: 5,
+          artist: "linkin park",
+          isrc: LinkinParkImage,
+        },
+      ],
+      nextConcertArray: [
+        {
+          id: 1,
+          artist: "zz top",
+          location: "Arena Zagreb",
+          date: "16.11.2023",
+          time: "20:15",
+          isrc: ZZTopImage,
+        },
+        {
+          id: 2,
+          artist: "whitesnake",
+          location: "Tvornica Kulture",
+          date: "20.04.2023",
+          time: "21:15",
+          isrc: WhitesnakeImage,
+        },
+        {
+          id: 3,
+          artist: "led zeppelin",
+          location: "Spaladium Arena",
+          date: "28.08.2023",
+          time: "19:15",
+          isrc: LedZeppelinImage,
+        },
+        {
+          id: 4,
+          artist: "sabaton",
+          location: "Pulska Arena",
+          date: "25.05.2023",
+          time: "22:00",
+          isrc: SabatonImage,
+        },
+        {
+          id: 5,
+          artist: "linkin park",
+          location: "Arena Zagreb",
+          date: "16.11.2023",
+          time: "20:15",
+          isrc: LinkinParkImage,
+        },
+      ],
+    };
+  },
+  computed: {
+    backgroundImageStyles() {
+      return (concert) => ({
+        "background-image": `url("${concert.isrc}")`,
+        "background-repeat": "no-repeat",
+        "background-size": "cover",
+        "background-position": "center",
+      });
+    },
+    filteredConcerts() {
+      return this.myReservationsArray.filter((srch) => {
+        return srch.artist.match(this.search);
+      });
+    },
+  },
+  methods: {
+    substringDateNumber(concert) {
+      let dateNumber = concert.date.substring(0, 2);
+      return dateNumber;
+    },
+    substringMonthName(concert) {
+      let month = concert.date.substring(3, 5);
+      if (month == "01") {
+        return "Jan";
+      } else if (month == "02") {
+        return "Feb";
+      } else if (month == "03") {
+        return "Mar";
+      } else if (month == "04") {
+        return "Apr";
+      } else if (month == "05") {
+        return "May";
+      } else if (month == "06") {
+        return "Jun";
+      } else if (month == "07") {
+        return "Jul";
+      } else if (month == "08") {
+        return "Aug";
+      } else if (month == "09") {
+        return "Sep";
+      } else if (month == "10") {
+        return "Oct";
+      } else if (month == "11") {
+        return "Nov";
+      } else if (month == "12") {
+        return "Dec";
+      }
+    },
+    nextSlide() {
+      this.index++;
+      if (this.index > this.nextConcertArray.length - 1) {
+        this.index = 0;
+      }
+      this.current = this.nextConcertArray[this.index];
+    },
+  },
+  created() {
+    this.current = this.nextConcertArray[this.index];
+  },
+  mounted() {
+    this.interval = setInterval(() => {
+      this.nextSlide();
+    }, 3000);
+  },
+};
+</script>
