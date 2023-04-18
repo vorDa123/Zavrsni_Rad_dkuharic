@@ -114,7 +114,10 @@
           </div>
         </div>
         <div v-for="reservation in filteredConcerts" :key="reservation.index">
-          <div class="reservationContainer inline">
+          <div
+            class="reservationContainer inline"
+            :style="backgroundImageStylesMobile(reservation)"
+          >
             <div class="paddingIcons paddingTopDateReservation">
               <p class="bold">{{ substringDateNumber(reservation) }}</p>
               <p class="bold uppercase">
@@ -322,6 +325,25 @@ export default {
         "background-size": "cover",
         "background-position": "center",
       });
+    },
+    backgroundImageStylesMobile() {
+      if (screen.width <= 412) {
+        return (concert) => ({
+          background: `linear-gradient(rgba(0, 0, 0, 0.50), rgba(0, 0, 0, 0.50)), url("${concert.isrc}")`,
+          "background-repeat": "no-repeat",
+          "background-size": "cover",
+          "background-position": "center",
+        });
+      } else {
+        return () => ({
+          "background-color": "#fffefe;",
+          "border-radius": "10px",
+          width: "90%",
+          height: "175px",
+          "padding-bottom": "10px",
+          margin: "20px 0 0 24px",
+        });
+      }
     },
     filteredConcerts() {
       return this.myReservationsArray.filter((srch) => {
