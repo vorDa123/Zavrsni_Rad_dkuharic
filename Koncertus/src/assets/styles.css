@@ -1003,6 +1003,118 @@ textarea {
   padding-left: 10px;
 }
 
+.wrapperBuyForm {
+  margin: 0 auto;
+  width: 45%;
+}
+
+.marginTopBuyForm {
+  margin-top: 80px;
+}
+
+.formContainer {
+  margin-top: 15px;
+  width: 770px;
+  margin-bottom: 20px;
+}
+
+.concertInfoContainer {
+  display: flex;
+  width: 100%;
+}
+
+.buyConcertImage {
+  max-width: 220px;
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+}
+
+.buyConcertInfo {
+  width: 550px;
+}
+
+.inlineNameSurname {
+  display: flex;
+  gap: 25px;
+}
+
+.inlineNumberOfTickets {
+  display: flex;
+  gap: 45px;
+}
+
+.inlineButton {
+  display: flex;
+  justify-content: space-between;
+}
+
+.numberOfTicketsStyle {
+  width: 30px;
+  margin: 5px 0 5px 0;
+  border-radius: 5px;
+  border: 1px solid #182135;
+}
+
+.dateInputStyle {
+  border: 1px solid #182135;
+  border-radius: 5px;
+  width: 150px;
+  margin: 5px 0 5px 0;
+  padding: 15px 10px;
+  font-size: 11pt;
+}
+
+.cvvInputStyle {
+  border: 1px solid #182135;
+  border-radius: 5px;
+  width: 50px;
+  margin: 5px 0 5px 0;
+  padding: 15px 10px;
+  font-size: 11pt;
+}
+
+.agreeTermsFontSize {
+  font-size: 9pt;
+}
+
+.priceToPay {
+  padding-right: 15px;
+}
+
+.modalBuyForm {
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
+  width: 100%;
+  max-width: 400px;
+  background-color: #f7f4f2;
+  border-radius: 16px;
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.successfullyPurchased {
+  font-size: 16pt;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.okButton {
+  background-color: #0a1733;
+  color: #f7f4f2;
+  padding: 5px 50px;
+  font-size: 16pt;
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  left: 132px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
 @media only screen and (1441px <= width <= 1536px) {
   .wrapper {
     max-width: 85%;
@@ -1098,6 +1210,29 @@ textarea {
 
   .marginTopFiveSongs {
     margin-top: 10px;
+  }
+
+  .wrapperBuyForm {
+    margin: 0 auto;
+    width: 50%;
+  }
+
+  .marginTopBuyForm {
+    margin-top: 80px;
+  }
+  
+  .modalBuyForm {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    width: 100%;
+    max-width: 400px;
+    background-color: #f7f4f2;
+    border-radius: 16px;
+    padding: 25px;
+    transition: all 0.3s ease;
   }
 }
 
@@ -1218,6 +1353,15 @@ textarea {
   .shoppingCart {
     font-size: 15pt;
     padding-right: 10px;
+  }
+
+  .wrapperBuyForm {
+    margin: 0 auto;
+    width: 55%;
+  }
+
+  .marginTopBuyForm {
+    margin-top: 80px;
   }
 }
 
@@ -1363,6 +1507,29 @@ textarea {
   .modalContainer {
     position: fixed;
     top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    width: 100%;
+    max-width: 400px;
+    background-color: #f7f4f2;
+    border-radius: 16px;
+    padding: 25px;
+    transition: all 0.3s ease;
+  }
+
+  .wrapperBuyForm {
+    margin: 0 auto;
+    width: 60%;
+  }
+
+  .marginTopBuyForm {
+    margin-top: 80px;
+  }
+
+  .modalBuyForm {
+    position: fixed;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 99;
@@ -1829,6 +1996,119 @@ textarea {
 
   .artistSong {
     margin-left: 230px;
+  }
+
+  .wrapperBuyForm {
+    margin: 0 auto;
+    width: 95%;
+  }
+  
+  .marginTopBuyForm {
+    margin-top: 80px;
+  }
+  
+  .formContainer {
+    margin-top: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .concertInfoContainer {
+    display: flex;
+    width: 100%;
+  }
+  
+  .buyConcertImage {
+    max-width: 220px;
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+  }
+  
+  .buyConcertInfo {
+    width: 490px;
+  }
+  
+  .inlineNameSurname {
+    display: flex;
+    gap: 25px;
+  }
+  
+  .inlineNumberOfTickets {
+    display: flex;
+    gap: 45px;
+  }
+  
+  .inlineButton {
+    display: flex;
+    justify-content: unset;
+    gap: 425px;
+  }
+  
+  .numberOfTicketsStyle {
+    width: 30px;
+    margin: 5px 0 5px 0;
+    border-radius: 5px;
+    border: 1px solid #182135;
+  }
+  
+  .dateInputStyle {
+    border: 1px solid #182135;
+    border-radius: 5px;
+    width: 150px;
+    margin: 5px 0 5px 0;
+    padding: 15px 10px;
+    font-size: 11pt;
+  }
+  
+  .cvvInputStyle {
+    border: 1px solid #182135;
+    border-radius: 5px;
+    width: 50px;
+    margin: 5px 0 5px 0;
+    padding: 15px 10px;
+    font-size: 11pt;
+  }
+  
+  .agreeTermsFontSize {
+    font-size: 9pt;
+  }
+  
+  .priceToPay {
+    padding-right: 15px;
+  }
+  
+  .modalBuyForm {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    width: 100%;
+    max-width: 400px;
+    background-color: #f7f4f2;
+    border-radius: 16px;
+    padding: 25px;
+    transition: all 0.3s ease;
+  }
+  
+  .successfullyPurchased {
+    font-size: 16pt;
+    text-align: center;
+    padding: 50px 0;
+  }
+  
+  .okButton {
+    background-color: #0a1733;
+    color: #f7f4f2;
+    padding: 5px 50px;
+    font-size: 16pt;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+    left: 132px;
+    margin-top: 20px;
+    cursor: pointer;
   }
 }
 
@@ -2465,5 +2745,125 @@ textarea {
     top: 425px;
     left: 0;
     text-align: center;
+  }
+
+  .wrapperBuyForm {
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .marginTopBuyForm {
+    margin-top: 80px;
+  }
+
+  .formContainer {
+    margin-top: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .concertInfoContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .buyConcertImage {
+    max-width: 100%;
+    width: 100%;
+    height: 180px;
+    border-radius: 10px;
+  }
+
+  .buyConcertInfo {
+    margin-top: 8px;
+    width: 100%;
+  }
+
+  .inlineNameSurname {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .inlineNumberOfTickets {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+  }
+
+  .inlineButton {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .numberOfTicketsStyle {
+    width: 30px;
+    margin: 5px 0 5px 0;
+    border-radius: 5px;
+    border: 1px solid #182135;
+  }
+
+  .dateInputStyle {
+    border: 1px solid #182135;
+    border-radius: 5px;
+    width: 150px;
+    margin: 5px 0 5px 0;
+    padding: 15px 10px;
+    font-size: 11pt;
+  }
+
+  .cvvInputStyle {
+    border: 1px solid #182135;
+    border-radius: 5px;
+    width: 50px;
+    margin: 5px 0 5px 0;
+    padding: 15px 10px;
+    font-size: 11pt;
+  }
+
+  .agreeTermsFontSize {
+    font-size: 9pt;
+  }
+
+  .priceToPay {
+    padding-right: 15px;
+  }
+
+  .modalBuyForm {
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99;
+    width: 100%;
+    max-width: 250px;
+    background-color: #f7f4f2;
+    border-radius: 16px;
+    padding: 25px;
+    transition: all 0.3s ease;
+  }
+
+  .successfullyPurchased {
+    font-size: 16pt;
+    text-align: center;
+    padding: 50px 0;
+  }
+
+  .okButton {
+    background-color: #0a1733;
+    color: #f7f4f2;
+    padding: 5px 50px;
+    font-size: 16pt;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+    left: 60px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+
+  .buyConcertInfo .paddingIcons .iconFontSize p{
+    padding-left: 10px;
   }
 }

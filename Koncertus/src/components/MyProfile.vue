@@ -159,7 +159,9 @@
                 </div>
               </div>
               <div class="buttonPositionReservation">
-                <button class="blueButton">BUY</button>
+                <RouterLink to="/buypage">
+                  <button class="blueButton">BUY</button>
+                </RouterLink>
               </div>
             </div>
           </div>

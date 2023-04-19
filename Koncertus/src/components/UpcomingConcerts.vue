@@ -62,9 +62,11 @@
             </p>
           </div>
           <br />
-          <button type="button" class="blueButton modalButtonPosition">
-            BUY
-          </button>
+          <RouterLink to="/buypage">
+            <button type="button" class="blueButton modalButtonPosition">
+              BUY
+            </button>
+          </RouterLink>
         </div>
       </div>
     </div>

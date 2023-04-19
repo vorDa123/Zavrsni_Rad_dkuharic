@@ -1,17 +1,23 @@
 <template>
   <div class="wrapper marginTop">
     <h2 class="uppercase">Upcoming concerts</h2>
-    <div class="listOfConcerts" v-for="(row, index) in numberOfItems" :key="index">
+    <div
+      class="listOfConcerts"
+      v-for="(row, index) in numberOfItems"
+      :key="index"
+    >
       <div class="row">
-        <div class="column" v-for="concert in row"
-        :key="concert.id">
+        <div class="column" v-for="concert in row" :key="concert.id">
           <div class="odd left inline">
             <div class="paddingIcons paddingTopDate">
-              <p class="bold">{{substringDateNumber(concert)}}</p>
-              <p class="bold uppercase">{{substringMonthName(concert)}}</p>
+              <p class="bold">{{ substringDateNumber(concert) }}</p>
+              <p class="bold uppercase">{{ substringMonthName(concert) }}</p>
             </div>
             <div class="inline paddingIcons paddingTopContent widthContent">
-              <div class="concertImage" :style="backgroundImageStyles(concert)" />
+              <div
+                class="concertImage"
+                :style="backgroundImageStyles(concert)"
+              />
               <div class="paddingIcons">
                 <p class="bold uppercase">{{ concert.artist }}</p>
                 <p class="descriptionFontSize">
@@ -34,19 +40,23 @@
                       class="paddingIcons removePaddingLeft"
                     />{{ concert.location }}
                   </p>
-                  <p class="paddingIcons removePaddingLeft">Price: {{ concert.price }} EUR</p>
+                  <p class="paddingIcons removePaddingLeft">
+                    Price: {{ concert.price }} EUR
+                  </p>
                 </div>
               </div>
               <div class="alignCenter shoppingCart">
                 <font-awesome-icon icon="fa-solid fa-cart-shopping" />
                 <br />
-                <button class="buttonMargin whiteButton">BUY</button>
+                <RouterLink to="/buypage">
+                  <button class="buttonMargin whiteButton">BUY</button>
+                </RouterLink>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>    
+    </div>
     <div
       class="alignCenter showMoreContainerConcertList"
       @click="loadMore"
@@ -319,7 +329,7 @@ export default {
         currentNumberOfItems * 10,
         currentNumberOfItems * 10 + 10
       );
-      this.numberOfItems.push(nextCards); 
+      this.numberOfItems.push(nextCards);
       if (
         currentNumberOfItems ==
         Math.round(this.upcomingConcertsArray.length / 10)
@@ -327,35 +337,35 @@ export default {
         this.showMoreButton = false;
       }
     },
-    substringDateNumber(concert){
-      let dateNumber = concert.date.substring(0,2);    
+    substringDateNumber(concert) {
+      let dateNumber = concert.date.substring(0, 2);
       return dateNumber;
-    },    
-    substringMonthName(concert){ 
-      let month = concert.date.substring(3,5); 
-      if(month == "01"){
+    },
+    substringMonthName(concert) {
+      let month = concert.date.substring(3, 5);
+      if (month == "01") {
         return "Jan";
-      } else if (month == "02"){
+      } else if (month == "02") {
         return "Feb";
-      } else if (month == "03"){
+      } else if (month == "03") {
         return "Mar";
-      } else if (month == "04"){
+      } else if (month == "04") {
         return "Apr";
-      } else if (month == "05"){
+      } else if (month == "05") {
         return "May";
-      } else if (month == "06"){
+      } else if (month == "06") {
         return "Jun";
-      } else if (month == "07"){
+      } else if (month == "07") {
         return "Jul";
-      } else if (month == "08"){
+      } else if (month == "08") {
         return "Aug";
-      } else if (month == "09"){
+      } else if (month == "09") {
         return "Sep";
-      } else if (month == "10"){
+      } else if (month == "10") {
         return "Oct";
-      } else if (month == "11"){
+      } else if (month == "11") {
         return "Nov";
-      } else if (month == "12"){
+      } else if (month == "12") {
         return "Dec";
       }
     },
