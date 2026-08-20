@@ -1,4 +1,5 @@
 # Koncertus
+Audio tracks and media files used in this project are for demonstration purposes only. All rights belong to their respective copyright owners.
 
 This template should help get you started developing with Vue 3 in Vite.
 
