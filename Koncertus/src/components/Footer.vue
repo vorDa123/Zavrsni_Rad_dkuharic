@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="footerCopyright">
-                <p>Copyright © 2023 | All rights reserved | Privacy policy</p>
+                <p>Audio tracks and media files used in this project are for demonstration purposes only. All rights belong to their respective copyright owners.</p>
             </div>
         </div>
     </div>
